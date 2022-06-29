@@ -19,7 +19,7 @@ function query(criteria) {
     .then(emails => {
         return emails.filter(email => {
             const {status, isRead, isStarred} = email
-            if (criteria.status === status && criteria.isRead === isRead && criteria.isStarred === isStarred) {
+            if (criteria.status === status) {
                 return email
             }
         })

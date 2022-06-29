@@ -6,7 +6,7 @@ export default {
             <section class="main-layout main-app email-details-container" v-if="email">
                 <div class="email-content">
                     <section class="content-header">
-                        <p><span>From {{getSenderName}}, {{email.from}}</span></p>
+                        <p><span>From {{email.from}}</span></p>
                         <p> <span>To {{email.to}}</span></p>
                         <p><span>Subject:<h5>{{email.subject}}</h5></span></p>
                     </section>
