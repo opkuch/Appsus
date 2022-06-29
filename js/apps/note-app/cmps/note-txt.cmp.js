@@ -1,7 +1,6 @@
 export default {
     template: `
              <section>
-                <h1>note txt</h1>
                   <p>{{info.txt}}</p>
              </section>
           `,
@@ -10,9 +9,6 @@ export default {
         return {
             val: ''
         }
-    },
-    created() {
-        console.log(this.info);
     },
     methods: {
         // reportVal() {

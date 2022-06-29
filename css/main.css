@@ -1,4 +1,6 @@
+/* NOTES APP */
 
+@import './note-app/main.css';
 /* EMAIL IMPORTS */
 @import './mail-app/views/email-app.css';
 @import './mail-app/cmps/email-preview.css';

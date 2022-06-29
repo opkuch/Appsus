@@ -3,6 +3,10 @@ import { storageService } from "../../../services/async-storage-service.js";
 
 export const notesService = {
     query,
+    remove,
+    save,
+    getEmptyNote,
+    get,
 }
 
 const NOTES_KEY = 'noteDB'
@@ -10,6 +14,31 @@ _createNotes()
 
 function query() {
     return storageService.query(NOTES_KEY)
+}
+
+function remove(id) {
+    return storageService.remove(NOTES_KEY, id)
+}
+
+function save(note) {
+    if (note.id) return storageService.put(NOTES_KEY, note)
+    else return storageService.post(NOTES_KEY, note)
+}
+
+function getEmptyNote(){
+    return {
+        id:'',
+        type:'',
+        isPinned: false,
+        style: {
+            backgroundColor: 'white'
+        },
+        info:{}
+    }
+}
+
+function get(id){
+return storageService.get(NOTES_KEY, id)
 }
 
 function _createNotes() {
@@ -21,7 +50,7 @@ function _createNotes() {
     return notes
 }
 
-function getNotes(){
+function getNotes() {
     return [
         {
             id: "n101",
