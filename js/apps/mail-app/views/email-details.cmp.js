@@ -1,21 +1,29 @@
 import { emailService } from "../services/email-service.js"
+import emailFolderList from "../cmps/email-folder-list.cmp.js"
 
 export default {
   template: `
-            <section class="email-details-container">
-                <section class="email-details-header">
-                    <span>From {{getSenderName}}, {{email.from}}</span></p>
-                    <span>To {{email.to}}</span>
-                    <span>Subject:<h3>{{email.subject}}</h3></span>
-                </section>
-                <section class="email-details-body">
-                    <p>{{email.boy}}</p>
-                </section>
-                <section class="email-details-actions">
-                </section>
+            <section class="main-layout main-app email-details-container">
+                <div class="email-content">
+                    <section class="content-header">
+                        <p><span>From {{getSenderName}}, {{email.from}}</span></p>
+                        <p> <span>To {{email.to}}</span></p>
+                        <p><span>Subject:<h5>{{email.subject}}</h5></span></p>
+                    </section>
+                    <section class="content-body">
+                        <p>{{email.body}}</p>
+                    </section>
+                    <section class="content-actions">
+                        <button>Delete</button>
+                        <button>Back</button>
+                    </section>
+                </div>
+                <email-folder-list />
             </section>
             `,
-  components: {},
+  components: {
+    emailFolderList
+  },
   data() {
     return {
         email: null
