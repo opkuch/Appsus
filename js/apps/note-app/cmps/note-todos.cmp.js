@@ -10,9 +10,6 @@ export default {
             val: ''
         }
     },
-    created() {
-        console.log(this.info);
-    },
     methods: {
         // reportVal() {
         //     this.$emit('setVal', this.val)

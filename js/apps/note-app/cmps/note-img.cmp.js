@@ -1,15 +1,12 @@
 export default {
     template: `
-            <img :src="info.url" alt=""/>  
+            <!-- <img :src="info.url" alt=""/>   -->
           `,
     props: ['info'],
     data() {
         return {
             val: ''
         }
-    },
-    created() {
-        console.log(this.info);
     },
     methods: {
         // reportVal() {

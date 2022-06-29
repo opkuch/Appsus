@@ -1,0 +1,17 @@
+.notes-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    
+}
+
+.notes-list .note-container{
+    background-color: lightcoral;
+
+    padding: 0.5em;
+    border-radius: 00.3em;
+}
+
+/* .note-container .remove-note-btn{
+    position: absolute;
+} */
