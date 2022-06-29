@@ -3,7 +3,7 @@ import emailFolderList from "../cmps/email-folder-list.cmp.js"
 
 export default {
   template: `
-            <section class="main-layout main-app email-details-container">
+            <section class="main-layout main-app email-details-container" v-if="email">
                 <div class="email-content">
                     <section class="content-header">
                         <p><span>From {{getSenderName}}, {{email.from}}</span></p>
@@ -15,7 +15,7 @@ export default {
                     </section>
                     <section class="content-actions">
                         <button>Delete</button>
-                        <button>Back</button>
+                        <router-link :to="'/emailApp/'">Back</router-link>
                     </section>
                 </div>
                 <email-folder-list />
@@ -26,24 +26,27 @@ export default {
   },
   data() {
     return {
-        email: null
+        email: null,
+        isShow: false
     }
   },
   created() {
-    console.log('hi');
+    this.isShow = true
     const id = this.$route.params.emailId
     emailService.get(id).then((email) => (this.email = email))
   },
   methods: {},
   computed: {
     getSenderName() {
+        if (!this.email) return
         const { from } = this.email
         const sliceIdx = from.indexOf('@')
         return from.slice(0, sliceIdx)
       },
       getTime() {
+        if (!this.email) return
           const emailDate = new Date(this.email.sentAt) + ''
           return emailDate.slice(16, 21)
       }
-  },
+  }
 }

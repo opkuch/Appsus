@@ -4,7 +4,8 @@ import { storageService } from '../../../services/async-storage-service.js'
 
 export const emailService = {
     query,
-    get
+    get,
+    save
 }
 
 const EMAIL_KEY = 'demoemailDB'
@@ -13,8 +14,17 @@ _createEmails()
 
 
 
-function query() {
+function query(criteria) {
     return storageService.query(EMAIL_KEY)
+    .then(emails => {
+        return emails.filter(email => {
+            const {status, isRead, isStarred} = email
+            if (criteria.status === status && criteria.isRead === isRead && criteria.isStarred === isStarred) {
+                return email
+            }
+        })
+
+    })
   }
 
   function get(emailId) {
@@ -28,5 +38,11 @@ function _createEmails() {
       utilService.saveToStorage(EMAIL_KEY, emails)
     }
   }
+
+  function save(email) {
+    if (email.id) return storageService.put(EMAIL_KEY, email)
+    else return storageService.post(EMAIL_KEY, email)
+  }
+  
 
   

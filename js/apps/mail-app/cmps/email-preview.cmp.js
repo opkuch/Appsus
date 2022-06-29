@@ -3,7 +3,7 @@ export default {
   props: ['email'],
   template: `
             <router-link class="email-details-btn" :to="'/emailApp/' + email.id">   
-                <li class="email-prev-container" @click="toggleClick">
+                <li class="email-prev-container" @click="read" :class="isRead">
                     <section class="email-prev-header">
                         <span>{{getSenderName}}</span>
                     </section>
@@ -20,13 +20,15 @@ export default {
   components: {},
   data() {
     return {
-        isClicked: false
     }
   },
-  created() {},
+  created() {
+    console.log('hello');
+  },
   methods: {
-    toggleClick() {
-        this.isClicked = !this.isClicked
+    read() {
+        this.email.isRead = true
+        this.$emit('read', this.email.id)
     }
   },
   computed: {
@@ -38,6 +40,9 @@ export default {
     getTime() {
         const emailDate = new Date(this.email.sentAt) + ''
         return emailDate.slice(16, 21)
+    },
+    isRead() {
+        return {read: this.email.isRead, 'not-read': !this.email.isRead}
     }
   },
 }

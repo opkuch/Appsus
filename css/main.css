@@ -3,6 +3,7 @@
 /* email-basic */
 @import './mail-app/basic/base.css';
 @import './mail-app/basic/layout.css';
+@import './mail-app//basic/helpers.css';
 
 /* email-cmps */
 @import './mail-app/views/email-app.css';

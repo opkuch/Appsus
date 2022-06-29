@@ -5,7 +5,7 @@ export default {
   template: `
         <section class="email-list-container">
             <ul>
-                <email-preview v-for="email in emails" :email="email"/>
+                <email-preview v-for="email in emails" :email="email" @read="read"/>
             </ul>
         </section>
 
@@ -17,7 +17,13 @@ export default {
   data() {
     return {}
   },
-  created() {},
-  methods: {},
+  created() {
+    console.log(this.emails);
+  },
+  methods: {
+    read(emailId) {
+        this.$emit('read', emailId)
+    }
+  },
   computed: {},
 }

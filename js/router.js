@@ -8,41 +8,44 @@ import bookDetails from "./apps/book-app/js/views/book-details.cmp.js"
 import emailApp from "./apps/mail-app/views/email-app.cmp.js"
 import emailDetails from "./apps/mail-app/views/email-details.cmp.js"
 const routes = [
-    {
-        path: '/',
-        component: appHomePage
-    },
-    {
-        path: '/miss-keep/',
-        component: noteApp
-    },
-    {
-        path: '/bookHome',
-        component: bookHomePage
-    },
-    {
-        path: '/about',
-        component: bookAboutPage
-    },
-    {
-        path: '/book',
-        component: bookApp,
-        children: [
-            {
-                path: '/book/:bookId',
-                component: bookDetails
-            },
-        ]
-    },
+    // {
+    //     path: '/',
+    //     component: appHomePage
+    // },
+    // {
+    //     path: '/miss-keep/',
+    //     component: noteApp
+    // },
+    // {
+    //     path: '/bookHome',
+    //     component: bookHomePage
+    // },
+    // {
+    //     path: '/about',
+    //     component: bookAboutPage
+    // },
+    // {
+    //     path: '/book',
+    //     component: bookApp,
+    //     children: [
+    //         {
+    //             path: '/book/:bookId',
+    //             component: bookDetails
+    //         },
+    //     ]
+    // },
     {
         path: '/emailApp',
         component: emailApp,
+        children: [
+        ]
 
     },
     {
         path: '/emailApp/:emailId',
         component: emailDetails
-    }
+    }   
+ 
 
 ]
 
