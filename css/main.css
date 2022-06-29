@@ -1,3 +1,11 @@
+
+/* EMAIL IMPORTS */
+@import './mail-app/views/email-app.css';
+@import './mail-app/cmps/email-preview.css';
+@import './mail-app/cmps/email-list.css';
+@import './mail-app/views/email-details.css';
+
+
 .main-header{
     background-color: lightblue;
 }

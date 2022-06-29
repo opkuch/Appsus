@@ -11,6 +11,9 @@ export default {
                     <!-- <router-link to="/bookHome">miss books</router-link> -->
                     <router-link to="'/miss-keep">miss note</router-link>
                     <!-- <router-link to="/about">miss Email</router-link> -->
+                    <router-link to="/bookHome">miss books</router-link>
+                    <!-- <router-link to="/book">miss Keeper</router-link> -->
+                    <router-link to="/emailApp">mister Email</router-link>
               </nav>
             </header>
             `,
