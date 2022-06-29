@@ -1,0 +1,35 @@
+.add-book-container {
+    /* margin-block-start: 1rem; */
+    padding: 0.3rem;
+    background-color: #7b212165;
+    /* border-radius: 5px; */
+}
+.add-book-container label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-inline-start: 1.8rem;
+
+}
+.add-book-container input {
+    margin-inline-start: 1rem;
+}
+.add-book-container ul {
+    margin-inline-start: 2rem;
+}
+.search-title{
+    margin-block-start: 0.5rem;
+    display: flex;
+    align-items: center;
+ }
+
+ .search-title button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 200ms;
+ }
+
+ .search-title button:hover {
+    color: red;
+ }

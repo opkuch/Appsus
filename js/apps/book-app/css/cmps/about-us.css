@@ -1,0 +1,35 @@
+.about-us-page-container {
+    display: flex;
+    justify-content: center;
+    background-color: #f3f3f1;
+}
+
+.about-us-img-container {
+    margin-inline-end: 2.5rem;
+    background-image: url('../../img/about-us.jpg');
+    min-width: 600px;
+    max-width: 800px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.about-us-container {
+    /* inline-size: 300px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.about-us-container h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+.about-us-container h1 span {
+    color: #ff554d;
+}
+
+.about-us-container p {
+    font-size: 1.3rem;
+}

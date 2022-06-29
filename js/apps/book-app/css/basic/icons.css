@@ -1,0 +1,58 @@
+/* sale icon */
+.sale {
+    display: inline-block;
+    background: orange;
+    color: rgba(47, 43, 43, 0.765);
+    height: 2.5rem;
+    width: 2.5rem;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2.5rem;
+    margin: 1rem;
+    transform: rotate(-20deg);
+    -webkit-animation: beat 1s ease infinite alternate;
+    animation: beat 1s ease infinite alternate;
+}
+
+.sale-prev {
+    height: 1.5rem;
+    width: 1.5rem;
+    line-height: 1.3rem;
+
+}
+
+.sale:before, .sale:after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: rotate(30deg);
+}
+
+.sale:after {
+    transform: rotate(60deg);
+}
+
+@-webkit-keyframes beat {
+    from {
+        transform: rotate(-20deg) scale(1);
+    }
+
+    to {
+        transform: rotate(-20deg) scale(1.1);
+    }
+}
+
+@keyframes beat {
+    from {
+        transform: rotate(-20deg) scale(1);
+    }
+
+    to {
+        transform: rotate(-20deg) scale(1.1);
+    }
+}

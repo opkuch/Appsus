@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam&family=Battambang:wght@300&family=Jolly+Lodger&family=Lobster&family=Mr+Dafoe&family=Roboto:wght@300&family=Satisfy&family=VT323&family=Work+Sans&display=swap');
+
+/* basic */
+@import 'basic/base.css';
+@import 'basic/layout.css';
+@import 'basic/helpers.css';
+@import 'basic/icons.css';
+
+/* components */
+@import 'cmps/book-list.css';
+@import 'cmps/book-details.css';
+@import 'cmps/book-filter.css';
+@import 'cmps/app-header.css';
+@import 'cmps/app-footer.css';
+@import 'cmps/home-page.css';
+@import 'cmps/book-review.css';
+@import 'cmps/user-msg.css';
+@import 'cmps/about-us.css';
+/* @import 'cmp/modal.css'; */
+@import 'cmps/book-add.css';
