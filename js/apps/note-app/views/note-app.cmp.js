@@ -1,9 +1,11 @@
 import { notesService } from "../services/note-service.cmp.js"
 import noteList from "../cmps/note-list.cmp.js"
+import noteAdd from "../cmps/note-add.cmp.js";
 
 export default {
     template: `
     <section class="note-app"> 
+        <note-add/>
         <note-list :notes="notesForDisplay" @remove="removeNote"/>
     </section>
   `,
@@ -36,5 +38,6 @@ export default {
     },
     components: {
         noteList,
+        noteAdd
     }
 };

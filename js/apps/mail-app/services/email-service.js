@@ -13,8 +13,6 @@ const EMAIL_KEY = 'demoemailDB'
 
 _createEmails()
 
-
-
 function query(criteria) {
     return storageService.query(EMAIL_KEY)
     .then(emails => {
@@ -24,7 +22,6 @@ function query(criteria) {
                 return email
             }
         })
-
     })
   }
 
