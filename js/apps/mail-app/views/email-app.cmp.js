@@ -26,6 +26,7 @@ export default {
   created() {
     emailService.query(this.criteria).then((emails) => {
       this.emails = emails
+      console.log(emails);
     })
   },
   methods: {
