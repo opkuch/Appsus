@@ -25,3 +25,41 @@
 .content-body {
     flex-basis: 80%;
 }
+.content-actions {
+    display: flex;
+    background-color: darkcyan;
+    padding: 0.3rem;
+}
+.content-actions a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    padding-inline: 0.6rem;
+    margin-inline-start: 1.5rem;
+    transition: all 250ms;
+
+}
+
+.content-actions .back-btn {
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+.content-actions .back-btn:hover {
+    transition: all 250ms;
+    background-color: rgb(57, 81, 88);
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.content-actions .remove-btn {
+    background-color: rgb(132, 43, 43);
+    color: white;
+    border-radius: 5px;
+}
+
+.content-actions .remove-btn:hover {
+    background-color: rgb(196, 146, 146);
+    color: black;
+    border-radius: 5px;
+}

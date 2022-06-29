@@ -14,8 +14,8 @@ export default {
                         <p>{{email.body}}</p>
                     </section>
                     <section class="content-actions">
-                        <button>Delete</button>
-                        <router-link :to="'/emailApp/'">Back</router-link>
+                        <router-link :to="'/emailApp/'" @click="removeEmail" class="remove-btn">Move to trash</router-link>
+                        <router-link :to="'/emailApp/'" class="back-btn">Back</router-link>
                     </section>
                 </div>
                 <email-folder-list />
@@ -27,15 +27,18 @@ export default {
   data() {
     return {
         email: null,
-        isShow: false
     }
   },
   created() {
-    this.isShow = true
     const id = this.$route.params.emailId
     emailService.get(id).then((email) => (this.email = email))
   },
-  methods: {},
+  methods: {
+    removeEmail() {
+        this.email.status = 'trash'
+        emailService.save(this.email)
+    }
+  },
   computed: {
     getSenderName() {
         if (!this.email) return
