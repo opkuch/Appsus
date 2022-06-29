@@ -3,6 +3,7 @@ import notePreview from "./note-preview.cmp.js"
 export default {
     template: `
         <section class="notes-list">
+            
                 <div v-for="note in notes" :key="note.id" class="note-container">
                      <note-preview :note="note"/>
                      <div class="actions">

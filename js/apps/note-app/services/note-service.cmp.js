@@ -28,7 +28,7 @@ function save(note) {
 function getEmptyNote(){
     return {
         id:'',
-        type:'',
+        type:'note-txt',
         isPinned: false,
         style: {
             backgroundColor: 'white'
