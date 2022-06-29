@@ -1,10 +1,10 @@
-import BookHomePage from "./apps/book-app/js/views/home-page.cmp"
-
+// import BookHomePage from "./apps/book-app/js/views/home-page.cmp"
+import appHomePage from "./views/app-home-page.cmp.js"
 
 const routes = [
     {
-        path: '/bookHome',
-        component: BookHomePage
+        path: '/',
+        component: appHomePage
     },
 ]
 
