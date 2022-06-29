@@ -2,9 +2,17 @@
 
 @import './note-app/main.css';
 /* EMAIL IMPORTS */
+/* email-basic */
+@import './mail-app/basic/base.css';
+@import './mail-app/basic/layout.css';
+@import './mail-app//basic/helpers.css';
+
+/* email-cmps */
 @import './mail-app/views/email-app.css';
+@import './mail-app/views/email-details.css';
 @import './mail-app/cmps/email-preview.css';
 @import './mail-app/cmps/email-list.css';
+@import './mail-app/cmps/email-folder-list.css';
 @import './mail-app/views/email-details.css';
 
 

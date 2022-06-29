@@ -1,0 +1,12 @@
+.email-folders {
+    background-color: aliceblue;
+    flex-basis: 20%;
+}
+.email-folders ul {
+    margin: 1rem;
+}
+.email-folders li {
+    cursor: pointer;
+    margin-block-end: 0.7rem;
+    font-size: 1.2rem;
+}

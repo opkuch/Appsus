@@ -1,4 +1,27 @@
+
 .email-details-container {
     display: flex;
+    flex-direction: row-reverse;
+}
+.email-content {
+    flex-basis: 80%;
+    display: flex;
     flex-direction: column;
+    background-color: rgb(201, 186, 186);
+}
+.content-header {
+    background-color: beige;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+.content-header p, h5 {
+    margin-inline-start: 0.5rem;
+    display: inline;
+}
+
+.content-body {
+    flex-basis: 80%;
 }

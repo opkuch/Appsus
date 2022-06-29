@@ -12,6 +12,8 @@ const emailData = [
     sentAt: 1551134930494,
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
+    status: 'sent',
+    isStarred: false
   },
   {
     id: 'e102',
@@ -21,6 +23,8 @@ const emailData = [
     sentAt: 1531113932594,
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
+    status: 'sent',
+    isStarred: false
   },
   {
     id: 'e103',
@@ -30,6 +34,8 @@ const emailData = [
     sentAt: 1521133931594,
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
+    status: 'inbox',
+    isStarred: false
   },
   {
     id: 'e104',
@@ -39,6 +45,8 @@ const emailData = [
     sentAt: 1451133930794,
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
+    status: 'inbox',
+    isStarred: false
   },
 ]
 const loggedinUser = { email: 'user@appsus.com', fullname: 'Mahatma Appsus' }
