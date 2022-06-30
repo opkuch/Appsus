@@ -2,6 +2,7 @@ import { emailService } from '../services/email-service.js'
 import emailList from '../cmps/email-list.cmp.js'
 import emailFolderList from '../cmps/email-folder-list.cmp.js'
 import emailCompose from '../cmps/email-compose.cmp.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
   template: `
@@ -9,7 +10,7 @@ export default {
             <email-list :emails="emails" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
             <div class="side-bar-container">
               <email-compose @added="addEmail"/>
-              <email-folder-list @folder="getFolder"/>
+              <email-folder-list />
             </div>
         </section>
         `,
@@ -31,15 +32,20 @@ export default {
     }
   },
   created() {
-    this.$route.params.status = 'inbox'
+    this.criteria.status = this.$route.path.slice(10)
+    if (!this.criteria.status) {
+      this.criteria.status = 'inbox'
+    }
     emailService.query(this.criteria).then((emails) => {
-      this.emails = emails
+      this.emails = emails.reverse()
     })
+  },
+  mounted() {
   },
   methods: {
     emailsToShow() {
       emailService.query(this.criteria).then((emails) => {
-        this.emails = emails
+        this.emails = emails.reverse()
       })
     },
     saveEmail(emailId) {
@@ -47,19 +53,17 @@ export default {
       emailService.save(this.emails[emailIdx])
       this.emails[emailIdx].isRead = true
     },
-    getFolder(status) {
-      this.criteria.status = status
-      // this.$route.params['status'] = status
-      this.emailsToShow()
-    },
     addEmail(emailContent) {
-      const newEmail = emailService.getEmptyEmail()
+      let newEmail = emailService.getEmptyEmail()
       const { to, subject, body } = emailContent
       newEmail.to = to
       newEmail.subject = subject
       newEmail.body = body
-      emailService.save(newEmail)
-      this.emails.push(newEmail)
+      newEmail.status = 'inbox/sent'
+      emailService.save(newEmail).then((email) => {
+        this.emails.unshift(email)
+      })
+      this.forceRerender()
     },
     moveToTrash(emailId) {
       emailService.get(emailId).then((email) => {
@@ -102,14 +106,13 @@ export default {
   },
   computed: {},
   watch: {
-    '$route.params.status': {
+    '$route.path': {
       handler() {
-        this.criteria.status = this.$route.params.emailId
+        this.criteria.status = this.$route.path.slice(10)
         emailService.query(this.criteria).then((emails) => {
-          this.emails = emails
+          this.emails = emails.reverse()
         })
       },
-      // immediate: true,
     },
   },
 }

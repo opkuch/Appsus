@@ -2,26 +2,86 @@
     background-color: rgb(253, 254, 255);
     margin-block-start: 1rem;
 }
-.email-folders ul {
-    margin: 1rem;
-}
+
 .email-folders li {
     display: flex;
     align-items: center;
     cursor: pointer;
     margin-block-end: 0.7rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     border-radius: 5px 30px 30px 5px;
-    padding: 0.2rem;
+    padding: 0.4rem;
     transition: 200ms all;
 }
 
 .email-folders li span {
     margin-inline-start: 0.5rem;
+    margin-block-start: 0.5rem;
 }
 
 .email-folders li:hover {
     transition: 200ms all;
     background-color: rgb(233, 235, 236);
 
+}
+.inbox-icon-container, .sent-icon-container, .bin-icon-container, .star-folder {
+    min-height: 25px;
+    min-width: 25px;
+    transition: all 200ms;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.inbox-container:hover .inbox-icon {
+    transition: all 200ms;
+    filter: invert(8%) sepia(65%) saturate(6070%) hue-rotate(342deg) brightness(103%) contrast(109%);
+}
+
+.sent-folder-container:hover .sent-icon {
+    transition: 200ms all;
+    filter: invert(10%) sepia(38%) saturate(2384%) hue-rotate(245deg) brightness(102%) contrast(108%);
+}
+
+.trash-folder-container:hover .bin-icon {
+    transition: 200ms all;
+    filter: invert(19%) sepia(13%) saturate(2759%) hue-rotate(101deg) brightness(97%) contrast(92%);
+}
+
+.star-folder-container:hover .star-folder-icon {
+    transition: all 200ms;
+    filter: invert(75%) sepia(93%) saturate(729%) hue-rotate(325deg) brightness(105%) contrast(101%);
+}
+
+.router-link-exact-active.ibx li {
+    box-shadow: inset 0 -3px 0 #B81100;
+}
+
+.router-link-exact-active.ibx .inbox-icon {
+    filter: invert(8%) sepia(65%) saturate(6070%) hue-rotate(342deg) brightness(103%) contrast(109%);
+}
+
+.router-link-exact-active.snt li {
+    box-shadow: inset 0 -3px 0 #3E057C;
+}
+
+.router-link-exact-active.snt .sent-icon {
+    filter: invert(12%) sepia(76%) saturate(3214%) hue-rotate(262deg) brightness(91%) contrast(118%);
+}
+
+.router-link-exact-active.trsh li {
+    box-shadow: inset 0 -3px 0 #0a462a;
+}
+
+.router-link-exact-active.trsh .bin-icon {
+    filter: invert(19%) sepia(13%) saturate(2759%) hue-rotate(101deg) brightness(97%) contrast(92%);
+}
+
+.router-link-exact-active.star li {
+    box-shadow: inset 0 -3px 0 rgb(166, 145, 27);;
+}
+
+.router-link-exact-active.star .star-folder-icon {
+    filter: invert(75%) sepia(93%) saturate(729%) hue-rotate(325deg) brightness(105%) contrast(101%);
 }
