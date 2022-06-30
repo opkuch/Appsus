@@ -6,7 +6,8 @@ export const emailService = {
     query,
     get,
     save,
-    getEmptyEmail
+    getEmptyEmail,
+    remove
 }
 
 const EMAIL_KEY = 'demoemailDB'
@@ -35,6 +36,10 @@ function query(criteria) {
   function save(email) {
     if (email.id) return storageService.put(EMAIL_KEY, email)
     else return storageService.post(EMAIL_KEY, email)
+  }
+
+  function remove(emailId) {
+    return storageService.remove(EMAIL_KEY, emailId)
   }
 
   function getEmptyEmail() {

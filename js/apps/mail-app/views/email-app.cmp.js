@@ -63,6 +63,15 @@ export default {
     },
     moveToTrash(emailId) {
       emailService.get(emailId).then((email) => {
+        if (email.status === 'trash' && confirm('Are you sure?')) {
+          emailService.remove(emailId)
+          const idx = this.emails.findIndex(
+            (wantedEmail) => wantedEmail.id === email.id
+          )
+          this.emails.splice(idx, 1)
+          this.forceRerender()
+          return
+        }
         email.status = 'trash'
         emailService.save(email).then((email) => {
           const updatedEmail = email
