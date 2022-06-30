@@ -38,7 +38,6 @@ export default {
             notesService.save(note).then( note => {
                 notesService.query()
                     .then(notes => {
-                        console.log(notes);
                         this.notes = notes
                     })
             })
@@ -69,14 +68,20 @@ export default {
     computed: {
         notesForDisplay() {
             if (!this.filterBy) return this.notes
-            let { type } = this.filterBy
+            let { txt } = this.filterBy
 
             let notes = this.notes
             notes = notes.filter((note) => {
-                return note.type.includes(type.toLowerCase())
+                // console.log(note);
+                // const noteVal = JSON.stringify(note.info);
+                console.log(JSON.stringify(note.info));
+                 return note.type.includes(txt.toLowerCase())
+                //  note.info.title.includes(txt, toLowerCase())
                 // console.log(note.info);
-                // note.info
-            })
+                // console.log(Object.values(note.info));
+                // console.log(note.info.);
+                
+            })            
             return notes
         }
     },
