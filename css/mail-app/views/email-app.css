@@ -9,6 +9,7 @@
     justify-content: center;
     margin-inline-end: 1rem;
     flex-basis: 20%;
+    margin-block-start: 0.5rem;
 }
 
 .main-content-container {
