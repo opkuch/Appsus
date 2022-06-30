@@ -10,3 +10,9 @@
     margin-inline-end: 1rem;
     flex-basis: 20%;
 }
+
+.main-content-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;
+}

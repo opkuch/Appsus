@@ -8,8 +8,10 @@ import { eventBus } from '../../../services/event-bus-service.js'
 export default {
   template: `
         <section class="main-layout main-app email-app-container" v-if="emails">
-          <email-filter />
-          <email-list :emails="emails" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
+          <div class="main-content-container">
+            <email-filter />
+            <email-list :emails="emails" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
+          </div>
           <div class="side-bar-container">
             <email-compose @added="addEmail"/>
             <email-folder-list />
