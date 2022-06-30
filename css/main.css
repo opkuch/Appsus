@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam&family=Anek+Telugu&family=Battambang:wght@300&family=Jolly+Lodger&family=Lobster&family=Mr+Dafoe&family=Roboto:wght@300&family=Satisfy&family=VT323&family=Work+Sans&display=swap');
-=======
 /* base */
 @import './basic/base.css';
 
->>>>>>> 7cfe452d9db94c194b766785e44808579d60d6f0
 /* NOTES APP */
 
 @import './note-app/main.css';
