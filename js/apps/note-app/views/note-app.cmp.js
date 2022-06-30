@@ -8,7 +8,11 @@ export default {
     <section class="note-app"> 
         <note-filter @filtered="setFilter"/>
         <note-add @saved="save"/>
-        <note-list :notes="notesForDisplay" @remove="removeNote" @setPinned="setPinned"/>
+        <note-list :notes="notesForDisplay" 
+                   @remove="removeNote" 
+                   @setPinned="setPinned" 
+                   @copy="copy"
+                   @saveBgClr="saveBgClr"/>
     </section>
   `,
     data() {
@@ -30,15 +34,32 @@ export default {
                 })
         },
         save(note) {
-            console.log(note);
             this.notes.push(note)
+            //  const notes = notesService.query()
+            //      .then(notes => this.notes = notes)
+        },
+        copy(note) {
+            note.id = ''
+            notesService.save(note).then(note => {
+                console.log(note);
+                this.notes.push(note)
+            })
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
         },
         setPinned(note) {
-            note.isPinned = !note.isPinned   
+            note.isPinned = !note.isPinned
+        },
+        saveBgClr(note) {
+            notesService.save(note).then(note => {
+                const notes = notesService.query()
+                    .then(notes => this.notes = notes)
+
+                this.notes = notes
+            })
         }
+
     },
     computed: {
         notesForDisplay() {

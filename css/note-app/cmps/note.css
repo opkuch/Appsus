@@ -31,3 +31,7 @@
      justify-content: space-around;
      align-items: baseline;
 }
+
+.note-container .actions input{
+    display: none;
+}
