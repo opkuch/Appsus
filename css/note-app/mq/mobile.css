@@ -1,0 +1,12 @@
+@media (max-width:700px){
+    .notes-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 90%;
+    }
+
+    .notes-list .note-container{
+        width: 100%;
+        text-align: start;
+    }
+}

@@ -58,17 +58,18 @@ function getNotes() {
             isPinned: true,
             info: {
                 txt: "Fullstack Me Baby!"
-            }
+            },
+            backgroundColor: "lightgray"
         },
         {
             id: "n102",
             type: "note-img",
             info: {
-                url: "http://some-img/me",
+                url: "",
                 title: "Bobi and Me"
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "lightseagreen"
             }
         },
         {

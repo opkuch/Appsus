@@ -1,0 +1,33 @@
+.notes-list .note-container {
+    width: 200px;
+    margin: 0 1rem 1rem 0;
+    border: 1px solid rgb(193, 187, 187);
+    padding: 0.5em;
+    border-radius: 00.3em;
+    transition: 0.2s;
+
+    min-height: 100px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.notes-list .note-container:hover {
+    box-shadow: 0px 0px 3px 0px #000000a6;
+}
+
+.note-container .title{
+   border-bottom: 1px solid rgb(185, 184, 184);
+   padding: 0.3rem;
+}
+
+.note-container .actions{
+     background-color: lightblue;
+     width: 100%;
+
+     display: flex;
+     justify-content: space-around;
+     align-items: baseline;
+}

@@ -1,4 +1,9 @@
 
-/* cmp */
+/* CMP */
+@import './cmps/note-list.css';
+@import './cmps/note-filter.css';
+@import './cmps/note-add.css';
+@import './cmps/note.css';
 
-@import './cmps/note-list.css'
+/* MQ */
+@import './mq/mobile.css';

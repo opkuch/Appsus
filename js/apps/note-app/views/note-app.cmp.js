@@ -1,43 +1,57 @@
 import { notesService } from "../services/note-service.cmp.js"
+import noteAdd from "../cmps/note-add.cmp.js"
 import noteList from "../cmps/note-list.cmp.js"
-import noteAdd from "../cmps/note-add.cmp.js";
+import noteFilter from "../cmps/note-filter.cmp.js"
 
 export default {
     template: `
     <section class="note-app"> 
-        <note-add/>
+        <note-filter @filtered="setFilter"/>
+        <note-add @saved="save"/>
         <note-list :notes="notesForDisplay" @remove="removeNote"/>
     </section>
   `,
     data() {
         return {
-            notes: null
-        };
+            notes: null,
+            filterBy: null
+        }
     },
     created() {
         notesService.query()
             .then(notes => this.notes = notes)
     },
     methods: {
-        removeNote(id){
-            console.log(id);
+        removeNote(id) {
             notesService.remove(id)
-            .then(() => {
-                const idx = this.notes.findIndex((note) => note.id === id)
-                this.notes.splice(idx, 1)
-            })
-            .catch(err => {
-                console.log(err)
-            })
+                .then(() => {
+                    const idx = this.notes.findIndex((note) => note.id === id)
+                    this.notes.splice(idx, 1)
+                })
+        },
+        save(note) {
+            this.notes.push(note)
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy
         }
     },
     computed: {
-        notesForDisplay(){
-            return this.notes
+        notesForDisplay() {
+            if (!this.filterBy) return this.notes
+            let { type } = this.filterBy
+             
+            let notes = this.notes
+            notes = notes.filter((note)=>{
+                return note.type.includes(type.toLowerCase())
+            })
+
+            return notes
         }
     },
     components: {
         noteList,
-        noteAdd
+        noteAdd,
+        noteFilter,
     }
 };
