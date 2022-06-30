@@ -16,8 +16,8 @@ export default {
                     <p>{{email.body}}</p>
                 </section>
                 <section class="content-actions">
-                    <router-link :to="'/emailApp/' + email.status" @click="moveToTrash" class="remove-btn">Move to trash</router-link>
-                    <router-link :to="'/emailApp/' + email.status" class="back-btn">Back</router-link>
+                    <router-link :to="'/emailApp/' + getRightPath" @click="moveToTrash" class="remove-btn">Move to trash</router-link>
+                    <router-link :to="'/emailApp/' + getRightPath" class="back-btn">Back</router-link>
                 </section>
               </div>
               <email-list :emails="emails" @read="saveEmail"/>
@@ -34,6 +34,7 @@ export default {
   data() {
     return {
       email: null,
+      path: null
     }
   },
   created() {
@@ -59,5 +60,10 @@ export default {
       const emailDate = new Date(this.email.sentAt) + ''
       return emailDate.slice(16, 21)
     },
+    getRightPath() {
+      if (this.email.status === 'inbox/sent') {
+        return 'inbox'
+      }else return this.email.status
+    }
   },
 }

@@ -2,22 +2,25 @@ import { emailService } from '../services/email-service.js'
 import emailList from '../cmps/email-list.cmp.js'
 import emailFolderList from '../cmps/email-folder-list.cmp.js'
 import emailCompose from '../cmps/email-compose.cmp.js'
+import emailFilter from '../cmps/email-filter.cmp.js'
 import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
   template: `
         <section class="main-layout main-app email-app-container" v-if="emails">
-            <email-list :emails="emails" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
-            <div class="side-bar-container">
-              <email-compose @added="addEmail"/>
-              <email-folder-list />
-            </div>
+          <email-filter />
+          <email-list :emails="emails" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
+          <div class="side-bar-container">
+            <email-compose @added="addEmail"/>
+            <email-folder-list />
+          </div>
         </section>
         `,
   components: {
     emailList,
     emailFolderList,
     emailCompose,
+    emailFilter
   },
   data() {
     return {
