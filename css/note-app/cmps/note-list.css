@@ -13,3 +13,17 @@
     /* grid-template-columns: repeat(3, 1fr); */
     /* gap: 0.5rem;   */
 }
+
+.notes-list .title{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* @for $i from 1 through 36 {
+    div:nth-child(#{$i}) {
+        $h: (random(400) + 100)+px;
+        height: $h;
+        line-height: $h;
+    }
+} */

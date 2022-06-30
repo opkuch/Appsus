@@ -11,13 +11,7 @@ export default {
         }
     },
     methods: {
-        // reportVal() {
-        //     this.$emit('setVal', this.val)
-        // }
     },
     computed: {
-        //   listId() {
-        //     return 'list' + this._uid
-        //   }
     }
 }

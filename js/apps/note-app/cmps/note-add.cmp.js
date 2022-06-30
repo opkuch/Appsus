@@ -6,9 +6,9 @@ export default {
                <div class="add-new-note-input">
                  <input type="text" :placeholder="setInputPlaceHolder" v-model="newNote.info.txt"/>
                    <div class="add-actions-btns">
-                       <button @click="setNewType('note-txt')">txt</button>
-                       <button @click="setNewType('note-img')">img</button>
-                       <button @click="setNewType('note-todos')">todos</button>
+                       <button @click="setNewType('note-txt')" title="text note">txt</button>
+                       <button @click="setNewType('note-img')" title="image note">img</button>
+                       <button @click="setNewType('note-todos')" title="to do note">todos</button>
                    </div>
               </div>
                <button @click="save" type="submit">save</button>

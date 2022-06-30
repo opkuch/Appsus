@@ -8,7 +8,7 @@ export default {
     <section class="note-app"> 
         <note-filter @filtered="setFilter"/>
         <note-add @saved="save"/>
-        <note-list :notes="notesForDisplay" @remove="removeNote"/>
+        <note-list :notes="notesForDisplay" @remove="removeNote" @setPinned="setPinned"/>
     </section>
   `,
     data() {
@@ -30,19 +30,23 @@ export default {
                 })
         },
         save(note) {
+            console.log(note);
             this.notes.push(note)
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
+        },
+        setPinned(note) {
+            note.isPinned = !note.isPinned   
         }
     },
     computed: {
         notesForDisplay() {
             if (!this.filterBy) return this.notes
             let { type } = this.filterBy
-             
+
             let notes = this.notes
-            notes = notes.filter((note)=>{
+            notes = notes.filter((note) => {
                 return note.type.includes(type.toLowerCase())
             })
 
