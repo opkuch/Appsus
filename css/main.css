@@ -12,7 +12,10 @@
 /* MQ */
 @import './note-app/mq/mobile.css';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ca3019138c42373f81a92a446c8eb25f470a44a5
 /* --------------------------------------------------- */
 
  /* EMAIL IMPORTS  */
@@ -27,10 +30,10 @@
 /* email-cmps */
 @import './mail-app/views/email-app.css';
 @import './mail-app/views/email-details.css';
+@import './mail-app/views/email-details.css';
 @import './mail-app/cmps/email-preview.css';
 @import './mail-app/cmps/email-list.css';
 @import './mail-app/cmps/email-folder-list.css';
-@import './mail-app/views/email-details.css';
 @import './mail-app/cmps/email-compose.css';
 
 
