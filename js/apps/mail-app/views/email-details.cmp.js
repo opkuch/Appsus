@@ -8,19 +8,25 @@ export default {
             <section class="main-layout main-app email-details-container" v-if="email">
               <div class="email-content">
                 <section class="content-header">
-                    <p><span>From {{email.from}}</span></p>
-                    <p> <span>To {{email.to}}</span></p>
-                    <p><span>Subject:<h5>{{email.subject}}</h5></span></p>
+                  <div class="subject-container">
+                    <h1>{{email.subject}}</h1>
+                  </div>
+                    <div class="sub-header">
+                      <img class="user-icon" src="assets/mail-img/icons/user.svg" />
+                      <div class="send-details">
+                        <div><span class="bold">From</span> <span>{{email.from}}</span></div>
+                        <div><span class="bold">To</span> <span>{{email.to}}</span></div>
+                      </div>
+                    </div>
                 </section>
                 <section class="content-body">
-                    <p>{{email.body}}</p>
+                   <p>{{email.body}}</p>
                 </section>
                 <section class="content-actions">
                     <router-link :to="'/emailApp/' + getRightPath" @click="moveToTrash" class="remove-btn">Move to trash</router-link>
                     <router-link :to="'/emailApp/' + getRightPath" class="back-btn">Back</router-link>
                 </section>
               </div>
-              <email-list :emails="emails" @read="saveEmail"/>
               <div class="side-bar-container">
                 <email-compose @added="addEmail"/>
                 <email-folder-list @folder="getFolder"/>

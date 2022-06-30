@@ -16,3 +16,7 @@
     flex-direction: column;
     flex-basis: 80%;
 }
+
+.user-icon {
+    max-width: 40px;
+}

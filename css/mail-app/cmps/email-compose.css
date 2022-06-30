@@ -8,7 +8,7 @@
     padding: 0.3rem;
     border-radius: 40px;
     margin-block-start: 0.5rem;
-    transition: all 200ms;
+    transition: all 100ms;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.174);
 }
@@ -21,8 +21,9 @@
     max-width: 50px;
 }
 .compose-btn-container:hover {
-    box-shadow: 0 2.5px 3px rgba(0, 0, 0, 0.174);
-    background-color: aliceblue;
+    transition: all 200ms;
+    background-color: rgb(163, 212, 255);
+    box-shadow: 0 3px 8px solid rgba(0, 0, 0, 0.183);
 }
 
 .compose-btn-container:hover span {
