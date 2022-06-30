@@ -33,8 +33,8 @@ export default {
             notesService.save(this.newNote).then(note => {
                 this.$emit('saved', note)
             }) 
-            this.newNote = notesService.getEmptyNote()
-            console.log(this.newNote);
+                this.newNote = notesService.getEmptyNote()
+                console.log(this.newNote);
         }
     },
         computed: {
