@@ -3,6 +3,19 @@
     padding: 0;
 }
 .email-list-container {
+    display: table;
     flex-basis: 80%;
-    background-color: bisque;
+    background-color: rgba(250, 246, 243, 0.568);
+    margin-block-start: 4rem;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.205);
+}
+
+
+.email-list-container li.not-read{
+    font-weight: 700;
+    background-color: rgb(246, 246, 246);
+}
+.email-list-container li.read {
+    font-weight: 400;
+    /* background-color: rgb(224, 224, 224); */
 }

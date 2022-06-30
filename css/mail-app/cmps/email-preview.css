@@ -1,14 +1,22 @@
 .email-prev-container {
     display: flex;
-    margin-block-end: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
     user-select: none;
     padding: 0.5rem;
     cursor: pointer;
     text-decoration: none;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.205);
+    transition: all  200ms;
+    font-size: 0.9rem;
+}
+.email-prev-container p {
+    margin: 0;
 }
 
 .email-prev-container:hover {
-    background-color: rgb(229, 226, 226);
+    transition: all  200ms;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.174);
 }
 
 .email-prev-body {
@@ -17,16 +25,13 @@
     justify-content: center;
 }
 
+.sliced-body {
+    margin-inline-start: 1rem;
+    color: rgb(120, 118, 118);
+}
+
 ul a {
     text-decoration: none;
     color: black;
 }
 
-ul li.not-read{
-    font-weight: 700;
-    background-color: grey;
-}
-ul li.read {
-    font-weight: 400;
-    background-color: green;
-}

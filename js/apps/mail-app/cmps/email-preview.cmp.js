@@ -9,6 +9,8 @@ export default {
                     </section>
                     <section class="email-prev-body">
                         <span>{{email.subject}}</span>
+                        <span class="sliced-body">{{sliceEmailBody}}</span>
+
                     </section>
                     <section class="email-prev-footer">
                         <span>{{getTime}}</span>
@@ -23,7 +25,6 @@ export default {
     }
   },
   created() {
-    console.log('hello');
   },
   methods: {
     read() {
@@ -43,6 +44,9 @@ export default {
     },
     isRead() {
         return {read: this.email.isRead, 'not-read': !this.email.isRead}
+    },
+    sliceEmailBody() {
+      return this.email.body.slice(0, 40) + '...'
     }
   },
 }
