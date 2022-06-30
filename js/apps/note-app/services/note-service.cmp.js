@@ -25,20 +25,20 @@ function save(note) {
     else return storageService.post(NOTES_KEY, note)
 }
 
-function getEmptyNote(){
+function getEmptyNote() {
     return {
-        id:'',
-        type:'note-txt',
+        id: '',
+        type: 'note-txt',
         isPinned: false,
         style: {
             backgroundColor: 'white'
         },
-        info:{}
+        info: {}
     }
 }
 
-function get(id){
-return storageService.get(NOTES_KEY, id)
+function get(id) {
+    return storageService.get(NOTES_KEY, id)
 }
 
 function _createNotes() {
@@ -55,7 +55,7 @@ function getNotes() {
         {
             id: "n101",
             type: "note-txt",
-            isPinned: true,
+            isPinned: false,
             info: {
                 txt: "Fullstack Me Baby!"
             },
@@ -64,17 +64,17 @@ function getNotes() {
         {
             id: "n102",
             type: "note-img",
+            isPinned: false,
             info: {
                 url: "",
                 title: "Bobi and Me"
             },
-            style: {
-                backgroundColor: "lightseagreen"
-            }
+            backgroundColor: "lightseagreen"
         },
         {
             id: "n103",
             type: "note-todos",
+            isPinned: false,
             info: {
                 label: "Get my stuff together",
                 todos: [

@@ -4,18 +4,22 @@ export default {
     template: `
         <section class="notes-list">
                  
-            <div v-for="note in notes" :key="note.id" class="note-container" :style="{backgroundColor: note.backgroundColor}">
+            {{notes}}
+            <div v-for="note in notes" :key="note.id" class="note-container" :style="{backgroundColor: note.backgroundColor, }">
                 
                 <div class="title">
                     <h1>{{note.info.title}}</h1>
+                    <span v-if="note.isPinned" class="pinned-note">!</span>
                 </div>
 
                 <note-preview :note="note"/>
 
                 <div class="actions">
-                  <button class="btn remove-note-btn" @click="remove(note.id)">x</button>
-                  <router-link :to="'/missKeep/edit/'+note.id">Edit</router-link>
-                   <input type="color" v-model="note.backgroundColor"/>
+                  <button class="btn remove-note-btn" @click="remove(note.id)" title="delete">x</button>
+                  <router-link :to="'/missKeep/edit/'+note.id" title="edit">Edit</router-link>
+                   <input type="color" v-model="updateBgClr" title="background color"/>
+                   <button @click="setPinned(note)" title="pinned">import</button>
+                   <button @click="copy(note)" title="copy">copy</button>
                 </div>
                 </div>
             </section>
@@ -25,9 +29,20 @@ export default {
     methods: {
         remove(id) {
             this.$emit('remove', id)
-        }
+        },
+        setPinned(note){
+            this.$emit('setPinned', note)
+        },
+        copy(){
+            console.log('hi');
+            this.$emit('copy', note)
+        },
+        updateBgClr() {
+            console.log('hi');
+        },
     },
-    computed: {},
+    computed: {
+    },
     components: {
         notePreview,
     }
