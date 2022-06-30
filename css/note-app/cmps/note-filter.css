@@ -1,0 +1,19 @@
+.notes-filter {
+    /* background-color: lightcoral; */
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.notes-filter input{
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    border:1px solid rgb(231 215 215);
+    background-color: rgb(239 239 239);
+    transition: .2s;
+}
+
+.notes-filter input:focus{
+    outline: none;
+    box-shadow: 0px 0px 3px 0px #0000004d;
+    background: white;   
+}

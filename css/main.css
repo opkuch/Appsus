@@ -1,3 +1,6 @@
+/* base */
+@import './basic/base.css';
+
 /* NOTES APP */
 
 @import './note-app/main.css';
