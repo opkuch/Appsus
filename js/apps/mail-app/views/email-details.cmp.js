@@ -15,7 +15,7 @@ export default {
                     <p>{{email.body}}</p>
                 </section>
                 <section class="content-actions">
-                    <router-link :to="'/emailApp/'" @click="removeEmail" class="remove-btn">Move to trash</router-link>
+                    <router-link :to="'/emailApp/'" @click="moveToTrash" class="remove-btn">Move to trash</router-link>
                     <router-link :to="'/emailApp/'" class="back-btn">Back</router-link>
                 </section>
               </div>
@@ -40,7 +40,7 @@ export default {
     emailService.get(id).then((email) => (this.email = email))
   },
   methods: {
-    removeEmail() {
+    moveToTrash() {
       this.email.status = 'trash'
       emailService.save(this.email)
     },

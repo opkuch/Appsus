@@ -1,7 +1,7 @@
  export default {
  template:`
         <section class="compose-btn-container" @click="isShow=!isShow" >
-            <span>Compose Email</span>
+            <span>Compose</span>
             <img class="compose-img" src="assets/mail-img/icons/add.svg"/>
         </section>
         <section class="email-compose-container" v-if="isShow">

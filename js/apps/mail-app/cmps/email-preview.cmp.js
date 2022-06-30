@@ -3,9 +3,10 @@ export default {
   props: ['email'],
   template: `
             <router-link class="email-details-btn" :to="'/emailApp/' + email.id">   
-                <li class="email-prev-container" @click="read" :class="isRead">
+                <li class="email-prev-container" @click="read" :class="isRead" :class="getStarStyle">
                     <section class="email-prev-header">
-                      <div class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" /></div>
+                    <div class="read-container"><img class="read-icon" :src="getReadIcon" /></div>
+                      <div @click.stop.prevent="star" class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" :class="getStarStyle"/></div>
                       <span class="from">{{getSenderName}}</span>
                     </section>
                     <section class="email-prev-body">
@@ -15,7 +16,7 @@ export default {
                     </section>
                     <section class="email-prev-footer">
                         <span class="email-time">{{getTime}}</span>
-                        <div class="trash-container"><img class="trash-icon" src="assets/mail-img/icons/trash.svg" /></div>
+                        <div class="trash-container" @click.stop.prevent="remove"><img class="trash-icon" src="assets/mail-img/icons/trash.svg" /></div>
                     </section>
                 </li>
             </router-link>
@@ -32,6 +33,12 @@ export default {
     read() {
         this.email.isRead = true
         this.$emit('read', this.email.id)
+    },
+    remove() {
+      this.$emit('removed', this.email.id)
+    },
+    star() {
+      this.$emit('starred', this.email.id)
     }
   },
   computed: {
@@ -49,6 +56,13 @@ export default {
     },
     sliceEmailBody() {
       return this.email.body.slice(0, 40) + '...'
+    },
+    getReadIcon() {
+      if (this.email.isRead) return '/assets/mail-img/icons/mail-open.svg'
+       else return '/assets/mail-img/icons/mail-close.svg'
+    },
+    getStarStyle() {
+      return {'starred': this.email.isStarred, '': !this.email.isStarred}
     }
   },
 }

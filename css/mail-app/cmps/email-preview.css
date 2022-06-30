@@ -40,7 +40,7 @@
     margin-inline-start: 0.5rem;
     margin-block-start: 0.3rem;
 }
-.email-prev-header .star-container, .email-prev-footer .trash-container {
+.star-container, .trash-container, .read-container {
     min-height: 30px;
     min-width: 30px;
     display: flex;
@@ -48,17 +48,21 @@
     align-items: center;
     transition: all 200ms;
 }
-.email-prev-header .star-icon, .email-prev-footer .trash-icon {
+.star-icon, .trash-icon, .read-icon {
     max-height: 20px;
     transition: all 100ms;
 }
 
-.email-prev-header .star-icon:hover {
+.star-icon:hover {
     transition: all 100ms;
     filter: invert(75%) sepia(93%) saturate(729%) hue-rotate(325deg) brightness(105%) contrast(101%);
 }
 
-.email-prev-header .star-container:hover, .email-prev-footer .trash-container:hover {
+.read-icon:hover {
+    filter: invert(75%) sepia(93%) saturate(729%) hue-rotate(325deg) brightness(105%) contrast(101%);
+
+}
+.star-container:hover, .trash-container:hover, .read-container:hover {
     background-color: rgba(222, 220, 220, 0.495);
     border-radius: 50%;
     transition: all 200ms;
@@ -72,6 +76,7 @@
 .email-prev-footer .email-time {
     margin-block-start: 0.5rem;
     margin-inline: 0.5rem;
+    min-width: 30px;
 }
 .email-prev-footer .trash-icon:hover {
     transition: all 100ms;
@@ -82,3 +87,10 @@ ul a {
     color: black;
 }
 
+.star-icon.starred {
+    filter: invert(75%) sepia(93%) saturate(729%) hue-rotate(325deg) brightness(105%) contrast(101%);
+}
+li.starred, li.read.starred {
+    color: rgb(166, 145, 27);
+    font-weight: 700;
+}

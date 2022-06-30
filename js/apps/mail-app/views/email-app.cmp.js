@@ -2,10 +2,11 @@ import { emailService } from '../services/email-service.js'
 import emailList from '../cmps/email-list.cmp.js'
 import emailFolderList from '../cmps/email-folder-list.cmp.js'
 import emailCompose from '../cmps/email-compose.cmp.js'
+
 export default {
   template: `
         <section class="main-layout main-app email-app-container" v-if="emails">
-            <email-list :emails="emails" @read="saveEmail"/>
+            <email-list :emails="emails" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
             <div class="side-bar-container">
               <email-compose @added="addEmail"/>
               <email-folder-list @folder="getFolder"/>
@@ -20,6 +21,8 @@ export default {
   data() {
     return {
       emails: null,
+      componentKey: 0,
+      lastFolder: null,
       criteria: {
         status: 'inbox',
         isRead: false,
@@ -57,7 +60,35 @@ export default {
       newEmail.body = body
       emailService.save(newEmail)
       this.emails.push(newEmail)
-      this.emailsToShow()
+    },
+    moveToTrash(emailId) {
+      emailService.get(emailId).then((email) => {
+        email.status = 'trash'
+        emailService.save(email).then((email) => {
+          const updatedEmail = email
+          const idx = this.emails.findIndex(
+            (email) => email.id === updatedEmail.id
+          )
+          this.emails.splice(idx, 1)
+        })
+        this.forceRerender()
+      })
+    },
+    forceRerender() {
+      this.componentKey += 1
+    },
+    starEmail(emailId) {
+      emailService.get(emailId).then((email) => {
+        email.isStarred = !email.isStarred
+        emailService.save(email).then((email) => {
+          const updatedEmail = email
+          const idx = this.emails.findIndex(
+            (email) => email.id === updatedEmail.id
+          )
+          this.emails.splice(idx, 1, updatedEmail)
+        })
+        this.forceRerender()
+      })
     },
   },
   computed: {},

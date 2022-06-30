@@ -5,7 +5,7 @@ export default {
   template: `
         <section class="email-list-container">
             <ul>
-                <email-preview v-for="email in emails" :email="email" @read="read"/>
+                <email-preview v-for="email in emails" :email="email" @read="read" @removed="remove" @starred="star" />
             </ul>
         </section>
 
@@ -15,14 +15,20 @@ export default {
     emailPreview
   },
   data() {
-    return {}
+    return {
+    }
   },
   created() {
-    console.log(this.emails);
   },
   methods: {
     read(emailId) {
         this.$emit('read', emailId)
+    },
+    remove(emailId) {
+      this.$emit('removed', emailId)
+    },
+    star(emailId) {
+      this.$emit('starred', emailId)
     }
   },
   computed: {},

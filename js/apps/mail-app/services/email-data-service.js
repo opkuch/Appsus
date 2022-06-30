@@ -48,6 +48,50 @@ const emailData = [
     status: 'inbox',
     isStarred: false
   },
+  {
+    id: 'e105',
+    subject: 'Whats up man',
+    body: 'Would love to catch up sometimes, Damnnn son where you find this',
+    isRead: false,
+    sentAt: 1521133931594,
+    from: 'jojo@jojo.com',
+    to: 'momo@momo.com',
+    status: 'inbox',
+    isStarred: false
+  },
+  {
+    id: 'e106',
+    subject: 'Lets go',
+    body: 'Would love to catch up sometimes, lets go to the park and get some strawberris while watching the bird fly away',
+    isRead: false,
+    sentAt: 1451133930794,
+    from: 'jojo@jojo.com',
+    to: 'momo@momo.com',
+    status: 'inbox',
+    isStarred: false
+  },
+  {
+    id: 'e107',
+    subject: 'Whats up man',
+    body: 'Would love to catch up sometimes, Damnnn son where you find this',
+    isRead: false,
+    sentAt: 1521133931594,
+    from: 'jojo@jojo.com',
+    to: 'momo@momo.com',
+    status: 'inbox',
+    isStarred: false
+  },
+  {
+    id: 'e108',
+    subject: 'Lets go',
+    body: 'Would love to catch up sometimes, lets go to the park and get some strawberris while watching the bird fly away',
+    isRead: false,
+    sentAt: 1451133930794,
+    from: 'jojo@jojo.com',
+    to: 'momo@momo.com',
+    status: 'inbox',
+    isStarred: false
+  },
 ]
 const loggedinUser = { email: 'user@appsus.com', fullname: 'Mahatma Appsus' }
 

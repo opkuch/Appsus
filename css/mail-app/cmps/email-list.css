@@ -11,11 +11,11 @@
 }
 
 
-.email-list-container li.not-read{
+li.not-read{
     font-weight: 700;
     background-color: rgb(253, 251, 251);
 }
-.email-list-container li.read {
+li.read {
     font-weight: 400;
     /* background-color: rgb(224, 224, 224); */
 }

@@ -14,9 +14,9 @@
                         <img />
                         <span>Trash</span>
                     </li>
-                    <li @click="draft">
+                    <li @click="star">
                         <img />
-                        <span>Draft</span>
+                        <span>Starred</span>
                     </li>
                 </ul>
             </section>
@@ -24,12 +24,6 @@
     components: {},
   data() {
    return {
-    folders: {
-        inbox: 'inbox',
-        // sent,
-        // trash,
-        // draft
-    }
    };
     },
   created() {},
@@ -43,8 +37,8 @@
     trash() {
         this.$emit('folder', 'trash')
     },
-    draft() {
-        this.$emit('folder', 'draft')
+    star() {
+        this.$emit('folder', 'star')
     }
  },
  computed: {},
