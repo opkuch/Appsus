@@ -44,7 +44,7 @@ const routes = [
         ]
     },
     {
-        path: '/emailApp/:status?',
+        path: '/emailApp/',
         component: emailApp,
         
     },

@@ -18,10 +18,11 @@ function query(criteria) {
   return storageService.query(EMAIL_KEY).then((emails) => {
     return emails.filter((email) => {
       const { status, isRead, isStarred } = email
-      console.log(criteria.status)
       if (criteria.status === 'star' && isStarred) {
         return email
       } else if (criteria.status === status) {
+        return email
+      }else if ((criteria.status === 'inbox' || criteria.status === 'sent') && status === 'inbox/sent') {
         return email
       }
     })

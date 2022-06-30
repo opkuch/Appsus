@@ -7,15 +7,16 @@
         <section class="email-compose-container" v-if="isShow">
             <div class="compose-header">
                 <p>New Email</p>
+                <button class="close-btn" @click="isShow=!isShow">X</button>
             </div>
             <div class="compose-body">
                 <form @submit.prevent="add">
                     <div class="compose-to">
-                        <span>To: </span>
+                        <span>To </span>
                         <input class="input-txt" type="email" placeholder="example@mail.com" v-model="emailContent.to">
                     </div>
                     <div class="compose-subject">
-                        <span>Subject: </span>
+                        <span>Subject </span>
                         <input class="input-txt" type="text" placeholder="Enter email subject" v-model="emailContent.subject">
                     </div>
                     <div>
@@ -25,7 +26,6 @@
                     <button class="submit-btn" type="submit">Submit</button>
                 </form>
             </div>
-            <button @click="isShow=!isShow">Back to emails</button>
 
         </section>
         `,

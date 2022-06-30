@@ -16,8 +16,8 @@ export default {
                     <p>{{email.body}}</p>
                 </section>
                 <section class="content-actions">
-                    <router-link :to="'/emailApp/'" @click="moveToTrash" class="remove-btn">Move to trash</router-link>
-                    <router-link :to="'/emailApp/'" class="back-btn">Back</router-link>
+                    <router-link :to="'/emailApp/' + email.status" @click="moveToTrash" class="remove-btn">Move to trash</router-link>
+                    <router-link :to="'/emailApp/' + email.status" class="back-btn">Back</router-link>
                 </section>
               </div>
               <email-list :emails="emails" @read="saveEmail"/>
