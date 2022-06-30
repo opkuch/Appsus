@@ -5,7 +5,8 @@ export default {
             <router-link class="email-details-btn" :to="'/emailApp/' + email.id">   
                 <li class="email-prev-container" @click="read" :class="isRead">
                     <section class="email-prev-header">
-                        <span>{{getSenderName}}</span>
+                      <div class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" /></div>
+                      <span class="from">{{getSenderName}}</span>
                     </section>
                     <section class="email-prev-body">
                         <span>{{email.subject}}</span>
@@ -13,7 +14,8 @@ export default {
 
                     </section>
                     <section class="email-prev-footer">
-                        <span>{{getTime}}</span>
+                        <span class="email-time">{{getTime}}</span>
+                        <div class="trash-container"><img class="trash-icon" src="assets/mail-img/icons/trash.svg" /></div>
                     </section>
                 </li>
             </router-link>

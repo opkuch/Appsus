@@ -48,33 +48,8 @@ const routes = [
         component: appHomePage
     },
     {
-        path: '/miss-keep/',
-        component: noteApp
-    },
-    {
-        path: '/bookHome',
-        component: bookHomePage
-    },
-    {
-        path: '/about',
-        component: bookAboutPage
-    },
-    {
-        path: '/book',
-        component: bookApp,
-        children: [
-            {
-                path: '/book/:bookId',
-                component: bookDetails
-            },
-        ]
-    },
-    {
-        path: '/emailApp',
+        path: '/emailApp/:status?',
         component: emailApp,
-        children: [
-        ]
-
     },
     {
         path: '/emailApp/:emailId',

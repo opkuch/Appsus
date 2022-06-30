@@ -13,7 +13,7 @@
 
 .email-list-container li.not-read{
     font-weight: 700;
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(253, 251, 251);
 }
 .email-list-container li.read {
     font-weight: 400;

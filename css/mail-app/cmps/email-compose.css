@@ -1,0 +1,79 @@
+.compose-btn-container {
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(254, 254, 254);
+    padding: 0.3rem;
+    border-radius: 40px;
+    margin-block-start: 0.5rem;
+    transition: all 200ms;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.174);
+    max-width: 250px;
+    align-self: center;
+}
+.compose-btn-container span {
+    margin-inline-start: 0.5rem;
+    margin-block-start: 0.5rem;
+    font-weight: 600;
+}
+.compose-btn-container .compose-img {
+    max-width: 50px;
+}
+.compose-btn-container:hover {
+    box-shadow: 0 2.5px 3px rgba(0, 0, 0, 0.174);
+    background-color: aliceblue;
+}
+
+.compose-btn-container:hover span {
+    color: rgb(80, 72, 72);
+}
+.compose-btn-container:hover .compose-img {
+    transition: all 200ms;
+    filter: invert(32%) sepia(86%) saturate(850%) hue-rotate(183deg) brightness(94%) contrast(81%);
+}
+
+.email-compose-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(242, 242, 242);
+    min-width: 500px;
+    min-height: 500px;
+    border-radius: 20px;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.compose-header {
+    font-size: 1.5rem;
+    height: 50px;
+    border-radius: 0 0 15px 15px;
+    background-color: rgb(79, 75, 75);
+    color: whitesmoke;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.compose-header p {
+    margin-inline-start: 0.5rem;
+}
+
+.compose-body {
+    display: flex;
+    justify-content: center;
+    margin-block-start: 1rem;
+}
+
+.compose-body form > * {
+    margin-block: 1rem;
+}
+
+.compose-body input {
+    margin-inline-start: 0.5rem;
+    border-radius: 3px;
+}

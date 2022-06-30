@@ -2,3 +2,11 @@
     display: flex;
     flex-direction: row-reverse;
 }
+
+.side-bar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline-end: 1rem;
+    flex-basis: 20%;
+}

@@ -2,16 +2,34 @@
  template:`
             <section class="main-app email-folders">
                 <ul class="clean-list">
-                    <li @click="inbox">inbox</li>
-                    <li @click="sent">sent</li>
-                    <li @click="trash">trash</li>
-                    <li @click="draft">draft</li>
+                        <li @click="inbox">
+                            <img />
+                            <span>Inbox</span>
+                        </li>
+                    <li @click="sent">
+                        <img />
+                        <span>Sent</span>
+                    </li>
+                    <li @click="trash">
+                        <img />
+                        <span>Trash</span>
+                    </li>
+                    <li @click="draft">
+                        <img />
+                        <span>Draft</span>
+                    </li>
                 </ul>
             </section>
         `,
     components: {},
   data() {
    return {
+    folders: {
+        inbox: 'inbox',
+        // sent,
+        // trash,
+        // draft
+    }
    };
     },
   created() {},
