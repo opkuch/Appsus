@@ -34,14 +34,18 @@ export default {
                 })
         },
         save(note) {
-            this.notes.push(note)
-            //  const notes = notesService.query()
-            //      .then(notes => this.notes = notes)
+            console.log(note);
+            notesService.save(note).then( note => {
+                notesService.query()
+                    .then(notes => {
+                        console.log(notes);
+                        this.notes = notes
+                    })
+            })
         },
         copy(note) {
             note.id = ''
             notesService.save(note).then(note => {
-                console.log(note);
                 this.notes.push(note)
             })
         },
@@ -50,6 +54,7 @@ export default {
         },
         setPinned(note) {
             note.isPinned = !note.isPinned
+            notesService.save(note)
         },
         saveBgClr(note) {
             notesService.save(note).then(note => {
@@ -69,8 +74,9 @@ export default {
             let notes = this.notes
             notes = notes.filter((note) => {
                 return note.type.includes(type.toLowerCase())
+                // console.log(note.info);
+                // note.info
             })
-
             return notes
         }
     },

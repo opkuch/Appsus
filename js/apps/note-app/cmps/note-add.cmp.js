@@ -11,55 +11,56 @@ export default {
                         <button @click="setNewType('note-todos')" title="to do note" type="button"><i class="fa-solid fa-list"></i></button>
                      </div>
                </div>
-               <button @click="save" type="submit">save</button>
+               <button type="submit">save</button>
             </form>
           `,
     props: [],
     data() {
         return {
-            newNote: notesService.getEmptyNote(),
+            newNote:null,
             txt: ''
         }
+    },
+    created() {
+        this.newNote =  notesService.getEmptyNote()
     },
     methods: {
         setNewType(newType) {
             this.newNote.type = newType
         },
         save() {
-            this.newNote.info.txt = this.txt
+            console.log(this.newNote.info);
             notesService.save(this.newNote).then(note => {
-                console.log(note);
                 this.$emit('saved', note)
-            })
+            }) 
             this.newNote = notesService.getEmptyNote()
+            console.log(this.newNote);
         }
     },
-    computed: {
-        setInputPlaceHolder() {
-            if (this.newNote.type === 'note-txt') {
-                this.newNote.info = {
-                    txt: this.txt
+        computed: {
+            setInputPlaceHolder() {
+                if (this.newNote.type === 'note-txt') {
+                    this.newNote.info = {
+                        txt: this.txt
+                    }
+                    // console.log(this.newNote);
+                    return 'Enter text...'
+                } else if (this.newNote.type === 'note-img') {
+                    this.newNote.info = {
+                        URL: this.txt
+                    }
+                    // console.log(this.newNote);
+                    return 'Enter image URL...'
+                } else {
+                    const todos = []
+                    this.txt.split(',').map((todo) => {
+                        const newTodo = { txt: todo }
+                        todos.push(newTodo)
+                    })
+                    this.newNote.info = {todos: todos}
+                    console.log(this.newNote.info);
+                    return 'Enter comma separated list...'
                 }
-                return 'Enter text...'
-            }
-            if (this.newNote.type === 'note-img') {
-                this.newNote.info = {
-                    URL: this.txt
-                }
-                return 'Enter image URL...'
-            }
-            if (this.newNote.type === 'note-todos') {
-                this.newNote.info = {
-                    URL: this.txt
-                }
-
-                // label: "Get my stuff together",
-                // todos: [
-                //     { txt: "Driving liscence", doneAt: null },
-                //     { txt: "Coding power", doneAt: 187111111 }
-                // ]
-                return 'Enter comma separated list...'
             }
         },
     }
-}
