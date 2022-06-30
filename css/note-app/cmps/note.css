@@ -35,3 +35,7 @@
 .note-container .actions input{
     display: none;
 }
+
+.important{
+    order: -1;
+}

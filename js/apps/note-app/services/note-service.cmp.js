@@ -30,9 +30,7 @@ function getEmptyNote() {
         id: '',
         type: 'note-txt',
         isPinned: false,
-        style: {
-            backgroundColor: 'white'
-        },
+        backgroundColor: '#rrggbb',
         info: {}
     }
 }
@@ -57,6 +55,7 @@ function getNotes() {
             type: "note-txt",
             isPinned: false,
             info: {
+                title: '',
                 txt: "Fullstack Me Baby!"
             },
             backgroundColor: "lightgray"
@@ -66,8 +65,8 @@ function getNotes() {
             type: "note-img",
             isPinned: false,
             info: {
-                url: "",
-                title: "Bobi and Me"
+                title: "Bobi and Me",
+                url: "#rrggbb",
             },
             backgroundColor: "lightseagreen"
         },
@@ -76,7 +75,7 @@ function getNotes() {
             type: "note-todos",
             isPinned: false,
             info: {
-                label: "Get my stuff together",
+                title: "Get my stuff together",
                 todos: [
                     { txt: "Driving liscence", doneAt: null },
                     { txt: "Coding power", doneAt: 187111111 }
@@ -85,36 +84,3 @@ function getNotes() {
         }
     ]
 }
-
-// const gNotes = [
-//     {
-//         id: "n101",
-//         type: "note-txt",
-//         isPinned: true,
-//         info: {
-//             txt: "Fullstack Me Baby!"
-//         }
-//     },
-//     {
-//         id: "n102",
-//         type: "note-img",
-//         info: {
-//             url: "http://some-img/me",
-//             title: "Bobi and Me"
-//         },
-//         style: {
-//             backgroundColor: "#00d"
-//         }
-//     },
-//     {
-//         id: "n103",
-//         type: "note-todos",
-//         info: {
-//             label: "Get my stuff together",
-//             todos: [
-//                 { txt: "Driving liscence", doneAt: null },
-//                 { txt: "Coding power", doneAt: 187111111 }
-//             ]
-//         }
-//     }
-// ];
