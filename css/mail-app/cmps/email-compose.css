@@ -4,14 +4,13 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(254, 254, 254);
+    margin-inline-start: 1rem;
     padding: 0.3rem;
     border-radius: 40px;
     margin-block-start: 0.5rem;
     transition: all 200ms;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.174);
-    max-width: 250px;
-    align-self: center;
 }
 .compose-btn-container span {
     margin-inline: 0.5rem;
@@ -41,11 +40,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(254, 254, 254);
     min-width: 500px;
     min-height: 500px;
     border-radius: 20px;
     padding: 0 1rem 1rem 1rem;
+    outline: 1px solid rgba(0, 0, 0, 0.139);
+    box-shadow: 0 2.5px 10px rgba(0, 0, 0, 0.174);
+
 }
 
 .compose-header {
@@ -57,11 +59,9 @@
     font-weight: 600;
     display: flex;
     align-items: center;
+    padding-inline: 1rem;
 }
 
-.compose-header p {
-    margin-inline-start: 0.5rem;
-}
 
 .compose-body {
     display: flex;
@@ -76,4 +76,58 @@
 .compose-body input {
     margin-inline-start: 0.5rem;
     border-radius: 3px;
+}
+.input-txt {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    color: rgb(24, 22, 22);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.input-txt:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38d3ef);
+    border-image-slice: 1;
+}
+
+
+.compose-body textarea {
+    border: none;
+    outline: 0.5px solid rgba(0, 0, 0, 0.388);
+    border-radius: 5px;
+    /* width: 450px; */
+    font-size: 1.2rem;
+}
+
+.compose-body textarea:focus {
+    outline: 3px solid rgba(33, 31, 31, 0.123);
+}
+
+.compose-body input {
+    width: 100%;
+}
+
+.submit-btn {
+    font-size: 1.2rem;
+    float: right;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    outline: 0.5px solid rgba(0, 0, 0, 0.192);
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.submit-btn:hover {
+    transition: all 200ms;
+    background-color: rgb(79, 75, 75);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.174);
+    color:rgb(247, 247, 247)
 }

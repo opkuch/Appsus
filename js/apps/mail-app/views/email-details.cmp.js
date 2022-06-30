@@ -1,6 +1,7 @@
 import { emailService } from '../services/email-service.js'
 import emailFolderList from '../cmps/email-folder-list.cmp.js'
 import emailCompose from '../cmps/email-compose.cmp.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
   template: `
@@ -38,6 +39,7 @@ export default {
   created() {
     const id = this.$route.params.emailId
     emailService.get(id).then((email) => (this.email = email))
+
   },
   methods: {
     moveToTrash() {

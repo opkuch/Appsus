@@ -1,6 +1,5 @@
 .email-prev-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     user-select: none;
     padding: 0.5rem;
@@ -17,12 +16,18 @@
 .email-prev-container:hover {
     transition: all  200ms;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.174);
+    background-color: rgba(250, 246, 243, 0.768);
+}
+.email-prev-container:hover .trash-icon {
+    transition: 200ms all;
+    opacity: 1;
+    pointer-events: all;
 }
 
 .email-prev-body {
-    flex-basis: 60%;
+    flex-basis: 65%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .sliced-body {
@@ -32,7 +37,7 @@
 .email-prev-header {
     display: flex;
     align-items: center;
-    flex-basis: 20%;
+    flex-basis: 15%;
 
 }
 .email-prev-header .from {
@@ -51,6 +56,11 @@
 .star-icon, .trash-icon, .read-icon {
     max-height: 20px;
     transition: all 100ms;
+}
+.trash-icon {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 200ms;
 }
 
 .star-icon:hover {

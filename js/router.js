@@ -44,19 +44,30 @@ const routes = [
         ]
     },
     {
-        path: '/',
-        component: appHomePage
-    },
-    {
         path: '/emailApp/:status?',
         component: emailApp,
+        
     },
     {
         path: '/emailApp/:emailId',
         component: emailDetails
-    }   
- 
-
+    },
+    {
+        path: '/emailApp/inbox',
+        component: emailApp
+    },
+    {
+        path: '/emailApp/sent',
+        component: emailApp
+    },
+    {
+        path: '/emailApp/trash',
+        component: emailApp
+    },
+    {
+        path: '/emailApp/star',
+        component: emailApp
+    }
 ]
 
 export const router = VueRouter.createRouter({

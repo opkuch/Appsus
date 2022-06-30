@@ -55,7 +55,8 @@ export default {
         return {read: this.email.isRead, 'not-read': !this.email.isRead}
     },
     sliceEmailBody() {
-      return this.email.body.slice(0, 40) + '...'
+      if (!this.email.body) return
+      return this.email.body.slice(0, 80) + '...'
     },
     getReadIcon() {
       if (this.email.isRead) return '/assets/mail-img/icons/mail-open.svg'

@@ -2,6 +2,7 @@ import { emailService } from '../services/email-service.js'
 import emailList from '../cmps/email-list.cmp.js'
 import emailFolderList from '../cmps/email-folder-list.cmp.js'
 import emailCompose from '../cmps/email-compose.cmp.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
   template: `
@@ -31,10 +32,13 @@ export default {
     }
   },
   created() {
-    this.$route.params.status = 'inbox'
+    this.criteria.status = this.$route.path.slice(10)
     emailService.query(this.criteria).then((emails) => {
+      console.log(emails);
       this.emails = emails
     })
+  },
+  mounted() {
   },
   methods: {
     emailsToShow() {
@@ -53,13 +57,19 @@ export default {
       this.emailsToShow()
     },
     addEmail(emailContent) {
-      const newEmail = emailService.getEmptyEmail()
+      let newEmail = emailService.getEmptyEmail()
       const { to, subject, body } = emailContent
       newEmail.to = to
       newEmail.subject = subject
       newEmail.body = body
-      emailService.save(newEmail)
-      this.emails.push(newEmail)
+      emailService.save(newEmail).then((email) => {
+        this.emails.unshift(newEmail)
+      })
+      let sentEmail = emailService.getEmptyEmail()
+      sentEmail.status = 'sent'
+      emailService.save(sentEmail).then((email) => {
+        this.emails.unshift(sentEmail)
+      })
     },
     moveToTrash(emailId) {
       emailService.get(emailId).then((email) => {
@@ -109,7 +119,6 @@ export default {
           this.emails = emails
         })
       },
-      // immediate: true,
     },
   },
 }
