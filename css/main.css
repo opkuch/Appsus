@@ -3,8 +3,14 @@
 @import './basic/base.css';
 
 /* NOTES APP */
+/* CMP */
+@import './cmps/note-list.css';
+@import './cmps/note-filter.css';
+@import './cmps/note-add.css';
+@import './cmps/note.css';
 
-@import './note-app/main.css';
+/* MQ */
+@import './mq/mobile.css';
 
 
 /* EMAIL IMPORTS */
