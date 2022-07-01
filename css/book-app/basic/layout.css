@@ -1,0 +1,11 @@
+.main-layout {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.main-app {
+    height: 79vh;
+    display: flex;
+    flex-grow: 1;
+}

@@ -38,3 +38,24 @@
 @import './mail-app/cmps/email-compose.css';
 @import './mail-app/cmps/email-filter.css';
 @import './mail-app//cmps/email-sort.css';
+
+
+/* BOOK IMPORTS */
+
+/* book basic */
+/* @import './book-app/basic/base.css';
+@import './book-app/basic/layout.css';
+@import './book-app/basic/helpers.css'; */
+
+/* book cmps */
+/* @import './book-app/views/about-us.css';
+@import './book-app/views/app-header.css';
+@import './book-app/views/app-footer.css';
+@import './book-app/views/book-app.css';
+@import './book-app/views/book-details.css';
+@import './book-app/views/book-add.css';
+@import './book-app/views/hompage.css';
+@import './book-app/cmps/book-filter.css';
+@import './book-app/cmps/book-review.css';
+@import './book-app//cmps/book-list.css';
+@import './book-app/cmps/user-msg.css'; */

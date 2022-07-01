@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row-reverse;
     font-family: 'Anek Malayalam';
+    /* padding-block: 1rem; */
 }
 .email-content {
     flex-basis: 80%;
@@ -15,14 +16,14 @@
     flex-direction: column;
     flex-basis: 20%;
     padding-block-end: 1rem;
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(243, 243, 243);
     border-bottom: 3px solid rgba(0, 0, 0, 0.226);
 }
 
 .content-body {
     flex-basis: 80%;
-    background-color: rgb(245, 240, 240);
-
+    background-color: rgb(252, 252, 252);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.226);
 }
 .content-actions {
     display: flex;
@@ -49,13 +50,20 @@
 .back-btn:hover::after {
     content: 'Back';
 }
+.content-actions {
+    margin-inline-start: 2rem;
+
+}
 
 .content-actions .remove-btn {
     padding: 0;
 }
+
 .content-actions .star-icon {
+    cursor: pointer;
     min-height: 30px;
 }
+
 .content-actions .trash-container {
     padding: 0.5rem;
 }
@@ -99,6 +107,10 @@
 .send-details {
     display: flex;
     flex-direction: column;
+    margin-inline-start: 1rem;
+}
+
+.user-icon {
     margin-inline-start: 0.5rem;
 }
 

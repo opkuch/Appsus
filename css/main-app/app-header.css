@@ -32,3 +32,69 @@
 .logo-img-container img{
     max-width: 40px;
 }
+
+.main-nav {
+    background: linear-gradient(to right, rgb(163, 0, 0), rgb(212, 43, 43));
+    box-shadow: inset 0 10px 30px rgba(31, 30, 30, 0.294);
+    position: absolute;
+    right: 90px;
+    top: 10px;
+    display: flex;
+    padding: 1rem;
+    border-radius: 20px;
+    outline: 5px solid rgba(27, 26, 26, 0.263);
+    transition: all 400ms;
+    transform: translate(200%);
+    font-size: 1.4rem;
+}
+.main-nav.menu-active {
+    transform: translate(0);
+}
+
+.main-nav img {
+    margin-inline: 1rem;
+}
+
+.main-nav img:hover {
+    transition: 200ms all;
+    filter: invert(100%) sepia(100%) saturate(16%) hue-rotate(281deg) brightness(103%) contrast(108%);
+}
+
+.main-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    color: whitesmoke;
+}
+
+.grid-icon {
+    position: relative;
+    max-width: 40px;
+    margin-inline-end: 2rem;
+    cursor: pointer;
+    transition: transform 1.3s, filter .5s;
+}
+
+.grid-icon:hover {
+    transform: rotate(90deg);
+    filter: invert(11%) sepia(37%) saturate(4778%) hue-rotate(351deg) brightness(91%) contrast(119%);
+}
+
+.mail-lnk:hover::after, .book-lnk:hover::after, .note-lnk:hover::after {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.mail-lnk:hover::after {
+    content: 'Mail App';
+}
+
+.book-lnk:hover::after {
+    content: 'Book App';
+}
+
+.note-lnk:hover::after {
+    content: 'Note App';
+}

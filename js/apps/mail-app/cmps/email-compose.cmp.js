@@ -20,7 +20,7 @@
                             <input class="input-txt" type="text" placeholder="Enter email subject" v-model="emailContent.subject">
                         </div>
                         <div>
-                            <textarea name="email-body" cols="45" rows="15" v-model="emailContent.body">
+                            <textarea name="email-body" cols="45" rows="10" v-model="emailContent.body">
                             </textarea>
                         </div>
                         <button class="submit-btn" type="submit">Submit</button>

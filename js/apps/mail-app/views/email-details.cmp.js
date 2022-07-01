@@ -12,9 +12,7 @@ export default {
                   <div class="subject-container">
                     <h1>{{email.subject}}</h1>
                     <section class="content-actions">
-                      <router-link :to="'/emailApp/' + getRightPath">
-                        <div @click.stop.prevent="star" class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" :class="getStarStyle"/></div>
-                      </router-link>                     
+                      <a @click="starEmail" class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" :class="getStarStyle"/></a>
                       <router-link :to="'/emailApp/' + getRightPath" @click="moveToTrash" class="remove-btn"> 
                         <div class="trash-container"><img class="trash-icon" src="assets/mail-img/icons/trash.svg" /></div>
                       </router-link>
@@ -59,6 +57,10 @@ export default {
       this.email.status = 'trash'
       emailService.save(this.email)
     },
+    starEmail() {
+      this.email.isStarred = !this.email.isStarred
+      emailService.save(this.email)
+    }
   },
   computed: {
     getSenderName() {
@@ -80,6 +82,9 @@ export default {
       if (this.email.status === 'inbox/sent') {
         return 'inbox'
       }else return this.email.status
+    },
+    getStarStyle() {
+      return {'starred': this.email.isStarred, '': !this.email.isStarred}
     }
   },
 }

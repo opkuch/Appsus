@@ -59,8 +59,8 @@ export default {
       return this.email.body.slice(0, 80) + '...'
     },
     getReadIcon() {
-      if (this.email.isRead) return '/assets/mail-img/icons/mail-open.svg'
-       else return '/assets/mail-img/icons/mail-close.svg'
+      if (this.email.isRead) return 'assets/mail-img/icons/mail-open.svg'
+       else return 'assets/mail-img/icons/mail-close.svg'
     },
     getStarStyle() {
       return {'starred': this.email.isStarred, '': !this.email.isStarred}
