@@ -12,6 +12,7 @@ export default {
                   <div class="subject-container">
                     <h1>{{email.subject}}</h1>
                     <section class="content-actions">
+                      <div class="read-container"><img class="read-icon" :src="getReadIcon" @click.stop.prevent="toggleIsRead" /></div>
                       <a @click="starEmail" class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" :class="getStarStyle"/></a>
                       <router-link :to="'/emailApp/' + getRightPath" @click="moveToTrash" class="remove-btn"> 
                         <div class="trash-container"><img class="trash-icon" src="assets/mail-img/icons/trash.svg" /></div>
@@ -60,6 +61,10 @@ export default {
     starEmail() {
       this.email.isStarred = !this.email.isStarred
       emailService.save(this.email)
+    },
+    toggleIsRead() {
+      this.email.isRead = !this.email.isRead
+      emailService.save(this.email)
     }
   },
   computed: {
@@ -85,6 +90,11 @@ export default {
     },
     getStarStyle() {
       return {'starred': this.email.isStarred, '': !this.email.isStarred}
-    }
+    },
+    getReadIcon() {
+      if (this.email.isRead) return 'assets/mail-img/icons/mail-open.svg'
+       else return 'assets/mail-img/icons/mail-close.svg'
+    },
+
   },
 }

@@ -43,6 +43,7 @@
     },
   created() {   
   },
+
  methods: {
     add() {
         this.$emit('added', this.emailContent)

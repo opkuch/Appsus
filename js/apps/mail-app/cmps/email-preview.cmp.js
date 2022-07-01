@@ -5,12 +5,12 @@ export default {
             <router-link class="email-details-btn" :to="'/emailApp/' + email.id">   
                 <li class="email-prev-container" @click="read" :class="isRead" :class="getStarStyle">
                     <section class="email-prev-header">
-                    <div class="read-container"><img class="read-icon" :src="getReadIcon" /></div>
+                    <div class="read-container"><img class="read-icon" :src="getReadIcon" @click.stop.prevent="toggleIsRead" /></div>
                       <div @click.stop.prevent="star" class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" :class="getStarStyle"/></div>
                       <span class="from">{{getSenderName}}</span>
                     </section>
                     <section class="email-prev-body">
-                        <span>{{email.subject}}</span>
+                        <span>{{getSubject}}</span>
                         <span class="sliced-body">{{sliceEmailBody}}</span>
 
                     </section>
@@ -39,6 +39,10 @@ export default {
     },
     star() {
       this.$emit('starred', this.email.id)
+    },
+    toggleIsRead() {
+      this.email.isRead = !this.email.isRead
+      this.$emit('toggleRead', this.email)
     }
   },
   computed: {
@@ -64,6 +68,10 @@ export default {
     },
     getStarStyle() {
       return {'starred': this.email.isStarred, '': !this.email.isStarred}
+    },
+    getSubject() {
+      if(this.email.subject.length > 30) return this.email.subject.slice(0,30) + '..'
+      else return this.email.subject
     }
   },
 }

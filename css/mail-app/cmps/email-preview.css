@@ -29,6 +29,7 @@
     display: flex;
     justify-content: flex-start;
     margin-block-start: 0.2rem;
+    margin-inline-start: 1.2rem;
 }
 
 .sliced-body {
@@ -70,7 +71,7 @@
 }
 
 .read-icon:hover {
-    filter: invert(97%) sepia(6%) saturate(6829%) hue-rotate(295deg) brightness(106%) contrast(103%);
+    filter: invert(7%) sepia(6%) saturate(6829%) hue-rotate(295deg) brightness(106%) contrast(103%);
 
 }
 .star-container:hover, .trash-container:hover, .read-container:hover {

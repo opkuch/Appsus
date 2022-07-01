@@ -10,7 +10,7 @@ export default {
         <section class="main-layout main-app email-app-container" v-if="emails">
           <div class="main-content-container">
             <email-filter @searching="searchEmails"/>
-            <email-list :emails="emailsToShow" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
+            <email-list :emails="emailsToShow" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" @toggle-read="toggleRead" :key="componentKey"/>
           </div>
           <div class="side-bar-container">
               <email-compose @added="addEmail" @to-draft="saveToDraft"/>
@@ -58,6 +58,12 @@ export default {
   },
   mounted() {},
   methods: {
+    loadEmails() {
+      emailService.query(this.criteria).then((emails) => {
+        this.emails = emails.reverse()
+        this.calcUnread()
+      })
+    },
     saveEmail(emailId) {
       const emailIdx = this.emails.findIndex((email) => email.id === emailId)
       emailService.save(this.emails[emailIdx])
@@ -160,6 +166,10 @@ export default {
       })
       this.unreadPercent =  this.unreadCount / this.emails.length * 100
     },
+    toggleRead(email) {
+      emailService.save(email)
+      this.forceRerender()
+    }
   },
   computed: {
     emailsToShow() {
@@ -188,7 +198,8 @@ export default {
     },
     fixedCount() {
       return Math.round(this.unreadPercent)?  Math.round(this.unreadPercent) : 0
-    }
+    },
+
   },
   watch: {
     '$route.path': {

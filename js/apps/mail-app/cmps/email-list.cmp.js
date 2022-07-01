@@ -5,7 +5,7 @@ export default {
   template: `
         <section class="email-list-container">
             <ul>
-                <email-preview v-for="email in emails" :email="email" @read="read" @removed="remove" @starred="star" />
+                <email-preview v-for="email in emails" :email="email" @read="read" @removed="remove" @starred="star" @toggle-read="toggleRead" />
             </ul>
         </section>
 
@@ -29,6 +29,9 @@ export default {
     },
     star(emailId) {
       this.$emit('starred', emailId)
+    },
+    toggleRead(email) {
+      this.$emit('toggleRead', email)
     }
   },
   computed: {},

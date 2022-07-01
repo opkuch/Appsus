@@ -2,9 +2,11 @@ export default {
   template: `
             <header class="main-header">
               <section class="header">
-              <div class="logo-img-container">
-                    <img src="assets/logo-img/horse1.png"/>
-              </div>
+              <router-link :to=" ">
+                <div class="logo-img-container">
+                      <img src="assets/logo-img/horse1.png"/>
+                </div>
+              </router-link>
                 <h1><span>pp</span>sus</h1>
               </section>
               <img src="assets/mail-img/icons/apps.svg" class="grid-icon" @click="toggleApps" />

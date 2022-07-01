@@ -134,3 +134,10 @@
     opacity: 1;
     pointer-events: all;
 }
+.content-actions .read-container {
+    padding: 0.6rem;
+    cursor: pointer;
+}
+.content-actions .read-icon{
+    min-height: 30px;
+} 
