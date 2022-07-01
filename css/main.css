@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam&family=Anek+Telugu&family=Battambang:wght@300&family=Jolly+Lodger&family=Lobster&family=Mr+Dafoe&family=Roboto:wght@300&family=Satisfy&family=VT323&family=Work+Sans&display=swap');
+/* MAIN-APP */
+@import './main-app/app-header.css';
+
 /* base */
 @import './basic/base.css';
 
@@ -34,7 +37,3 @@
 @import './mail-app/cmps/email-compose.css';
 @import './mail-app/cmps/email-filter.css';
 
-
-.main-header{
-    background-color: lightblue;
-}

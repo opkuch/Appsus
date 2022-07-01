@@ -34,6 +34,14 @@
                             <span>Starred</span>
                         </li>
                     </router-link>
+                    <router-link class="drft" :to="'/emailApp/' + 'draft'" >
+                        <li class="draft-folder-container">
+                            <div class="draft-folder">
+                                <img class="draft-folder-icon" src="assets/mail-img/icons/clipboard.svg"/>
+                            </div>
+                            <span>Draft</span>
+                        </li>
+                    </router-link>
                 </ul>
             </section>
         `,

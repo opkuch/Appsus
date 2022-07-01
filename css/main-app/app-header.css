@@ -1,0 +1,25 @@
+.main-header {
+    font-family: 'Nunito-Sans';
+    color: rgb(46, 43, 43);
+    font-size: 1.8rem;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    padding-block: 1rem;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+.logo-img-container, .header h1 {
+    margin-inline-start: 1rem;
+}
+
+.header h1 span {
+    color: rgb(0, 140, 255);
+}
+.logo-img-container img{
+    max-width: 50px;
+}

@@ -28,6 +28,7 @@
     flex-basis: 65%;
     display: flex;
     justify-content: flex-start;
+    margin-block-start: 0.2rem;
 }
 
 .sliced-body {

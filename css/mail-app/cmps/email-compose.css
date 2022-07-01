@@ -22,7 +22,7 @@
 }
 .compose-btn-container:hover {
     transition: all 200ms;
-    background-color: rgb(163, 212, 255);
+    background-color: #a3d4ff;
     box-shadow: 0 3px 8px solid rgba(0, 0, 0, 0.183);
 }
 

@@ -13,7 +13,7 @@ const emailData = [
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
     status: 'sent',
-    isStarred: false
+    isStarred: false,
   },
   {
     id: 'e102',
@@ -24,7 +24,7 @@ const emailData = [
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
     status: 'sent',
-    isStarred: false
+    isStarred: false,
   },
   {
     id: 'e103',
@@ -35,7 +35,7 @@ const emailData = [
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
     status: 'inbox',
-    isStarred: false
+    isStarred: false,
   },
   {
     id: 'e104',
@@ -46,7 +46,7 @@ const emailData = [
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
     status: 'inbox',
-    isStarred: false
+    isStarred: false,
   },
   {
     id: 'e105',
@@ -57,7 +57,7 @@ const emailData = [
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
     status: 'inbox',
-    isStarred: false
+    isStarred: false,
   },
   {
     id: 'e106',
@@ -68,7 +68,7 @@ const emailData = [
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
     status: 'inbox',
-    isStarred: false
+    isStarred: false,
   },
   {
     id: 'e107',
@@ -79,7 +79,7 @@ const emailData = [
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
     status: 'inbox',
-    isStarred: false
+    isStarred: false,
   },
   {
     id: 'e108',
@@ -90,7 +90,7 @@ const emailData = [
     from: 'jojo@jojo.com',
     to: 'momo@momo.com',
     status: 'inbox',
-    isStarred: false
+    isStarred: false,
   },
 ]
 const loggedinUser = { email: 'user@appsus.com', fullname: 'Mahatma Appsus' }

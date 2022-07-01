@@ -13,7 +13,7 @@ export default {
             <email-list :emails="emails" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
           </div>
           <div class="side-bar-container">
-            <email-compose @added="addEmail"/>
+              <email-compose @added="addEmail" @to-draft="saveToDraft"/>
             <email-folder-list />
           </div>
         </section>
@@ -34,6 +34,7 @@ export default {
         isRead: false,
         isStarred: false,
       },
+      draftMail: null
     }
   },
   created() {
@@ -108,6 +109,19 @@ export default {
         this.forceRerender()
       })
     },
+    saveToDraft(emailContent) {
+      if(!emailContent.to && !emailContent.subject && !emailContent.body) return
+      if (!this.draftMail) {
+        this.draftMail = emailService.getEmptyEmail()
+      }
+      const { to, subject, body } = emailContent
+      this.draftMail.to = to
+      this.draftMail.subject = subject
+      this.draftMail.body = body
+      this.draftMail.status = 'draft'
+      emailService.save(this.draftMail)
+      this.forceRerender()
+    }
   },
   computed: {},
   watch: {

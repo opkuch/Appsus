@@ -1,46 +1,48 @@
  export default {
  template:`
-        <section class="compose-btn-container" @click="isShow=!isShow" >
+         <section class="compose-btn-container" @click="toggleCompose" >
             <span>Compose</span>
             <img class="compose-img" src="assets/mail-img/icons/add.svg"/>
         </section>
-        <section class="email-compose-container" v-if="isShow">
-            <div class="compose-header">
-                <p>New Email</p>
-                <button class="close-btn" @click="isShow=!isShow">X</button>
-            </div>
-            <div class="compose-body">
-                <form @submit.prevent="add">
-                    <div class="compose-to">
-                        <span>To </span>
-                        <input class="input-txt" type="email" placeholder="example@mail.com" v-model="emailContent.to">
-                    </div>
-                    <div class="compose-subject">
-                        <span>Subject </span>
-                        <input class="input-txt" type="text" placeholder="Enter email subject" v-model="emailContent.subject">
-                    </div>
-                    <div>
-                        <textarea name="email-body" cols="45" rows="15" v-model="emailContent.body">
-                        </textarea>
-                    </div>
-                    <button class="submit-btn" type="submit">Submit</button>
-                </form>
-            </div>
-
-        </section>
+            <section class="email-compose-container" v-show="isShow">
+                <div class="compose-header">
+                    <p>New Email</p>
+                    <button class="close-btn" @click="toggleCompose">X</button>
+                </div>
+                <div class="compose-body">
+                    <form @submit.prevent="add">
+                        <div class="compose-to">
+                            <span>To </span>
+                            <input class="input-txt" type="email" placeholder="example@mail.com" v-model="emailContent.to">
+                        </div>
+                        <div class="compose-subject">
+                            <span>Subject </span>
+                            <input class="input-txt" type="text" placeholder="Enter email subject" v-model="emailContent.subject">
+                        </div>
+                        <div>
+                            <textarea name="email-body" cols="45" rows="15" v-model="emailContent.body">
+                            </textarea>
+                        </div>
+                        <button class="submit-btn" type="submit">Submit</button>
+                    </form>
+                </div>
+            </section>
         `,
     components: {},
   data() {
    return {
+    componentKey: 0,
     emailContent: {
         to: null,
         subject: null,
         body: null
     },
-    isShow: false
+    isShow: false,
+    intervalId: null
    };
     },
-  created() {},
+  created() {   
+  },
  methods: {
     add() {
         this.$emit('added', this.emailContent)
@@ -49,6 +51,15 @@
             subject: null,
             body: null
         }
+    },
+    toggleCompose() {
+        this.isShow = !this.isShow
+        if (this.isShow) {
+            this.intervalId = setInterval(() => {
+                this.$emit('toDraft', this.emailContent)
+            },1000)
+        }
+        else clearInterval(this.intervalId)
     }
  },
  computed: {},

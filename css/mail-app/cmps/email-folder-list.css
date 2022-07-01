@@ -24,7 +24,7 @@
     background-color: rgb(233, 235, 236);
 
 }
-.inbox-icon-container, .sent-icon-container, .bin-icon-container, .star-folder {
+.inbox-icon-container, .sent-icon-container, .bin-icon-container, .star-folder, .draft-folder {
     min-height: 25px;
     min-width: 25px;
     transition: all 200ms;
@@ -41,7 +41,7 @@
 
 .sent-folder-container:hover .sent-icon {
     transition: 200ms all;
-    filter: invert(10%) sepia(38%) saturate(2384%) hue-rotate(245deg) brightness(102%) contrast(108%);
+    filter: invert(12%) sepia(76%) saturate(3214%) hue-rotate(262deg) brightness(91%) contrast(118%);
 }
 
 .trash-folder-container:hover .bin-icon {
@@ -54,8 +54,11 @@
     filter: invert(75%) sepia(93%) saturate(729%) hue-rotate(325deg) brightness(105%) contrast(101%);
 }
 
+
 .router-link-exact-active.ibx li {
     box-shadow: inset 0 -3px 0 #B81100;
+    background-color: rgb(233, 235, 236);
+
 }
 
 .router-link-exact-active.ibx .inbox-icon {
@@ -64,6 +67,7 @@
 
 .router-link-exact-active.snt li {
     box-shadow: inset 0 -3px 0 #3E057C;
+    background-color: rgb(233, 235, 236);
 }
 
 .router-link-exact-active.snt .sent-icon {
@@ -72,6 +76,7 @@
 
 .router-link-exact-active.trsh li {
     box-shadow: inset 0 -3px 0 #0a462a;
+    background-color: rgb(233, 235, 236);
 }
 
 .router-link-exact-active.trsh .bin-icon {
@@ -79,9 +84,24 @@
 }
 
 .router-link-exact-active.star li {
-    box-shadow: inset 0 -3px 0 rgb(166, 145, 27);;
+    box-shadow: inset 0 -3px 0 rgb(166, 145, 27);
+    background-color: rgb(233, 235, 236);
 }
 
 .router-link-exact-active.star .star-folder-icon {
     filter: invert(75%) sepia(93%) saturate(729%) hue-rotate(325deg) brightness(105%) contrast(101%);
+}
+
+.draft-folder-container:hover .draft-folder-icon {
+    transition: all 200ms;
+    filter: invert(41%) sepia(15%) saturate(1054%) hue-rotate(168deg) brightness(94%) contrast(94%);
+}
+
+.router-link-exact-active.drft .draft-folder-icon {
+    filter: invert(41%) sepia(15%) saturate(1054%) hue-rotate(168deg) brightness(94%) contrast(94%);
+}
+
+.router-link-exact-active.drft li {
+    box-shadow: inset 0 -3px 0 #4A6B8A;
+    background-color: rgb(233, 235, 236);
 }

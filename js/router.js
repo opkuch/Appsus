@@ -67,6 +67,10 @@ const routes = [
     {
         path: '/emailApp/star',
         component: emailApp
+    },
+    {
+        path: '/emailApp/draft',
+        component: emailApp
     }
 ]
 

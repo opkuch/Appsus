@@ -2,3 +2,8 @@
     font-family: Anek-Telugu;
     src: url('../../../assets/fonts/Anek-Telugu/Anek-Telugu.ttf');
 }
+
+@font-face {
+    font-family: Nunito-Sans;
+    src: url('../../../assets/fonts/Nunito-Sans/Nunito-Sans.ttf');
+}
