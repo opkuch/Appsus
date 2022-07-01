@@ -35,6 +35,7 @@ export default {
                 const info = this.noteToEdit.info
                 if(this.noteToEdit.type === 'note-txt') this.newTxt = info.txt
                 if(this.noteToEdit.type === 'note-img') this.newTxt = info.url
+                if(this.noteToEdit.type === 'note-video') this.newTxt = info.url
                 if(this.noteToEdit.type === 'note-todos'){
                     const todos = []
                     this.noteToEdit.info.todos.map(todo =>{

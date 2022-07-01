@@ -8,6 +8,7 @@ export default {
                       <div class="add-actions-btns">
                         <button @click="setNewType('note-txt')" title="text note" type="button"><i class="fa-solid fa-comment"></i></button>
                         <button @click="setNewType('note-img')" title="image note" type="button"><i class="fa-solid fa-image"></i></button>
+                        <button @click="setNewType('note-video')" title="video note" type="button"><i class="fa-brands fa-youtube"></i></i></button>
                         <button @click="setNewType('note-todos')" title="to do note" type="button"><i class="fa-solid fa-list"></i></button>
                         <button type="submit" title="save" class="save-btn"><i class="fa-solid fa-circle-check"></i></button>
                      </div>
@@ -55,16 +56,22 @@ export default {
     },
     computed: {
         setInputPlaceHolder() {
-            if (this.newNote.type === 'note-txt') {
+            const type = this.newNote.type
+            if (type === 'note-txt') {
                 this.newNote.info = {
                     txt: this.txt
                 }
                 return 'Enter text...'
-            } else if (this.newNote.type === 'note-img') {
+            } else if (type === 'note-img') {
                 this.newNote.info = {
                     url: this.txt
                 }
                 return 'Enter image URL...'
+            } else if (type === 'note-video') {
+                this.newNote.info = {
+                    url: this.txt
+                }
+                return 'Enter video URL...'
             } else {
                 const todos = []
                 this.txt.split(',').map((todo) => {
