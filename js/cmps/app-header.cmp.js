@@ -2,10 +2,10 @@ export default {
   template: `
             <header class="main-header">
               <section class="header">
-                <h1><span>App</span>sus</h1>
-                <div class="logo-img-container">
+              <div class="logo-img-container">
                     <img src="assets/logo-img/horse1.png"/>
                 </div>
+                <h1><span>pp</span>sus</h1>
               </section>
               <nav class="main-nav">
                     <!-- <router-link to="/bookHome">miss books</router-link> -->

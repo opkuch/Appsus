@@ -17,14 +17,18 @@
     cursor: pointer;
 }
 .logo-img-container, .header h1 {
-    margin-inline-start: 1.5rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
-
+.header h1 {
+    color: rgb(142, 33, 33);
+}
 .header h1 span {
-    color: #be1010;
+    color: #121111;
 }
-
+.logo-img-container {
+    margin-block-start: 0.5rem;
+    margin-inline-start: 2rem;
+}
 .logo-img-container img{
     max-width: 40px;
 }
