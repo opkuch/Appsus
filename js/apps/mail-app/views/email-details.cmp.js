@@ -12,7 +12,7 @@ export default {
                     <h1>{{email.subject}}</h1>
                   </div>
                     <div class="sub-header">
-                      <img class="user-icon" src="assets/mail-img/icons/user.svg" />
+                      <!-- <img class="user-icon" src="assets/mail-img/icons/user.svg" /> -->
                       <div class="send-details">
                         <div><span class="bold">From</span> <span>{{email.from}}</span></div>
                         <div><span class="bold">To</span> <span>{{email.to}}</span></div>
@@ -29,7 +29,7 @@ export default {
               </div>
               <div class="side-bar-container">
                 <email-compose @added="addEmail"/>
-                <email-folder-list @folder="getFolder"/>
+                <email-folder-list />
               </div>
             </section>
             `,

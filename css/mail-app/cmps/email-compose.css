@@ -5,20 +5,19 @@
     justify-content: center;
     background-color: rgb(254, 254, 254);
     margin-inline-start: 1rem;
-    padding: 0.3rem;
     border-radius: 40px;
     margin-block-start: 0.5rem;
+    padding: 0.4rem;
     transition: all 100ms;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.174);
 }
 .compose-btn-container span {
     margin-inline: 0.5rem;
-    margin-block-start: 0.5rem;
     font-weight: 600;
 }
 .compose-btn-container .compose-img {
-    max-width: 50px;
+    max-width: 45px;
 }
 .compose-btn-container:hover {
     transition: all 200ms;
@@ -141,4 +140,7 @@
     font-size: 1.3rem;
     color: whitesmoke;
     cursor: pointer;
+}
+.email-app-container .compose-btn-container span {
+    margin-block-start: 8px;
 }

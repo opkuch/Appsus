@@ -1,20 +1,24 @@
 .main-header {
-    font-family: 'Nunito-Sans';
+    font-family: 'Anek Malayalam';
     color: rgb(46, 43, 43);
-    font-size: 1.8rem;
+    font-size: 2rem;
     background-color: whitesmoke;
     display: flex;
     align-items: center;
-    padding-block: 1rem;
+    padding-block: 0.5rem;
     justify-content: space-between;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.215);
 }
 
 .header {
     display: flex;
     align-items: center;
+    user-select: none;
+    cursor: pointer;
 }
 .logo-img-container, .header h1 {
-    margin-inline-start: 1rem;
+    margin-inline-start: 1.5rem;
+    letter-spacing: 1.5px;
 }
 
 .header h1 span {
