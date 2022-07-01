@@ -21,12 +21,11 @@
 
 .content-body {
     flex-basis: 80%;
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(245, 240, 240);
 
 }
 .content-actions {
     display: flex;
-    background-color: rgb(234, 234, 234);
     padding: 0.3rem;
 }
 .content-actions a{
@@ -39,28 +38,42 @@
 
 }
 
-.content-actions .back-btn {
-    background-color: lightblue;
-    border-radius: 5px;
+.back-btn {
+    position: absolute;
+    right: 1rem;
+    margin-top: 0.7rem;
+    width: 35px;
+
 }
 
-.content-actions .back-btn:hover {
-    transition: all 250ms;
-    background-color: rgb(57, 81, 88);
-    color: whitesmoke;
-    border-radius: 5px;
+.back-btn:hover::after {
+    content: 'Back';
 }
 
 .content-actions .remove-btn {
-    background-color: rgb(132, 43, 43);
-    color: white;
-    border-radius: 5px;
+    padding: 0;
+}
+.content-actions .star-icon {
+    min-height: 30px;
+}
+.content-actions .trash-container {
+    padding: 0.5rem;
+}
+.content-actions .star-container {
+    padding: 0.5rem;
+}
+.content-actions .trash-container .trash-icon {
+    min-height: 30px;
+}
+
+.content-actions .remove-btn:hover .trash-icon {
+    filter: invert(12%) sepia(76%) saturate(7420%) hue-rotate(353deg) brightness(75%) contrast(108%);
 }
 
 .content-actions .remove-btn:hover {
-    background-color: rgb(196, 146, 146);
+    background-color: rgba(219, 207, 207, 0.559);
     color: black;
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
 .subject-container {
@@ -95,7 +108,7 @@
 
 .content-body p {
     font-size: 1.2rem;
-    inline-size: 450px;
+    inline-size: 650px;
     margin-inline-start: 1rem;
     margin-block-start: 1rem;
 }
@@ -103,4 +116,9 @@
 .date-details {
     width: 100%;
     float: right;
+}
+
+.remove-btn .trash-icon {
+    opacity: 1;
+    pointer-events: all;
 }

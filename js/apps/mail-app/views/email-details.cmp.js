@@ -8,8 +8,17 @@ export default {
             <section class="main-layout main-app email-details-container" v-if="email">
               <div class="email-content">
                 <section class="content-header">
+                <router-link :to="'/emailApp/' + getRightPath" class="back-btn"><img class="" src="assets/mail-img/icons/arrow-back.svg"/></router-link>
                   <div class="subject-container">
                     <h1>{{email.subject}}</h1>
+                    <section class="content-actions">
+                      <router-link :to="'/emailApp/' + getRightPath">
+                        <div @click.stop.prevent="star" class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" :class="getStarStyle"/></div>
+                      </router-link>                     
+                      <router-link :to="'/emailApp/' + getRightPath" @click="moveToTrash" class="remove-btn"> 
+                        <div class="trash-container"><img class="trash-icon" src="assets/mail-img/icons/trash.svg" /></div>
+                      </router-link>
+                    </section>
                   </div>
                     <div class="sub-header">
                       <img class="user-icon" src="assets/mail-img/icons/user.svg" />
@@ -22,10 +31,6 @@ export default {
                 </section>
                 <section class="content-body">
                    <p>{{email.body}}</p>
-                </section>
-                <section class="content-actions">
-                    <router-link :to="'/emailApp/' + getRightPath" @click="moveToTrash" class="remove-btn">Move to trash</router-link>
-                    <router-link :to="'/emailApp/' + getRightPath" class="back-btn">Back</router-link>
                 </section>
               </div>
               <div class="side-bar-container">
