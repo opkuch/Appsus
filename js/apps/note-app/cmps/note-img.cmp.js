@@ -1,6 +1,6 @@
 export default {
     template: `
-            <img src="" alt=""/>  
+            <img :src="info.url" alt=""/>  
           `,
     props: ['info'],
     data() {

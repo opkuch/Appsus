@@ -1,17 +1,12 @@
-.add-note-container{
-    background-color: lightcyan;
-    /* background-color: lavenderblush; */
-    /* padding: 1rem; */
-    /* border: blueviolet 1px solid; */
-    /* width: 100%; */
-    
+.add-note-container {
+    /* background-color: lightcyan; */
     text-align: center;
     padding: 0.5rem;
     margin-bottom: 1rem;
 }
 
-.add-new-note-input{
-    box-shadow: 0px 0px 3px 0px #000000a6;
+.add-new-note-input {
+    box-shadow: 0px 0px 5px 1px #0000007d;
     background-color: white;
     border-radius: 0.5rem;
     display: flex;
@@ -21,31 +16,41 @@
     padding: 0.3rem;
 }
 
-.add-new-note-input input{
+.add-new-note-input input {
     border-radius: 0.5rem;
-     border: none;
-     padding: 0.5rem 1rem;
-     transition: .2s;
-     width: 80%;
+    border: none;
+    padding: 0.5rem 1rem;
+    transition: .2s;
+    width: 80%;
 }
 
-.add-new-note-input input:focus{
-     outline: none;
+.add-new-note-input input:focus {
+    outline: none;
 }
 
-.add-new-note-input .add-actions-btns{
+.add-new-note-input .add-actions-btns {
     display: flex;
     flex-direction: row;
 }
 
-.add-new-note-input button{
+.add-new-note-input button {
     background-color: white;
     border: none;
     margin-right: 5px;
+    cursor: pointer;
+    transition: .2s;
 }
 
-.add-new-note-input button:hover{
-    background-color: rgba(184, 181, 181, 0.393);
-    border-radius: 50%;
-    border: rgba(166, 164, 164, 0.393) 1px solid;
+.add-new-note-input .save-btn {
+    color: rgba(0, 0, 0, 0.47);
+    padding-left: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.485);
+}
+
+.add-new-note-input .save-btn:hover {
+    color: black;
+}
+
+.add-new-note-input button:hover {
+    color: darkcyan;
 }
