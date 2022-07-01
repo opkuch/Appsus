@@ -9,7 +9,7 @@
     cursor: pointer;
     font-size: 1.3rem;
     border-radius: 5px 30px 30px 5px;
-    padding: 0.4rem;
+    padding: 0.405rem;
     transition: 200ms all;
 }
 
@@ -106,10 +106,10 @@
 }
 
 .email-details-container .email-folders li {
-    padding: 0.45rem;
+    padding: 0.405rem;
 }
 .email-details-container .email-folders li span{
-    margin-block: 4.1px;
+    margin-block: 4.9px;
 }
 
 .email-details-container .email-folders li img {

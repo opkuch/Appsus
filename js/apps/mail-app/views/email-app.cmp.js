@@ -131,20 +131,26 @@ export default {
     emailsToShow() {
       if (!this.searchVal) return this.emails
       const regex = new RegExp(this.searchVal, 'i')
-      let subjectFiltered = this.emails
-        .filter((email) => {
-          return regex.test(email.subject)
-        })
-        let from
-      let bodyFiltered = this.emails.filter(email => regex.test(email.body))
-      bodyFiltered = bodyFiltered.filter(email => {
-        const sliceIdx = email.from.indexOf('@')
+      let subjectFiltered = this.emails.filter((email) => {
+        return regex.test(email.subject)
+      })
+      let from
+      let sliceIdx
+      let bodyFiltered = this.emails.filter((email) => regex.test(email.body))
+      bodyFiltered = bodyFiltered.filter((email) => {
+        sliceIdx = email.from.indexOf('@')
         from = email.from.slice(0, sliceIdx)
         return !regex.test(email.subject) && !regex.test(from)
-    })
-
-      
-      return subjectFiltered.concat(bodyFiltered)
+      })
+      let fromFilter = this.emails.filter((email) => {
+        sliceIdx = email.from.indexOf('@')
+        from = email.from.slice(0, sliceIdx)
+        return regex.test(from)
+      })
+      fromFilter = fromFilter.filter(
+        (email) => !regex.test(email.subject) && !regex.test(email.body)
+      )
+      return subjectFiltered.concat(bodyFiltered).concat(fromFilter)
     },
   },
   watch: {

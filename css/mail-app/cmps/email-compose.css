@@ -3,7 +3,7 @@
     font-size: 1.5rem;
     align-items: center;
     justify-content: center;
-    background-color: rgb(254, 254, 254);
+    background-color: rgb(250, 247, 247);
     margin-inline-start: 1rem;
     border-radius: 40px;
     margin-block-start: 0.5rem;
@@ -21,8 +21,8 @@
 }
 .compose-btn-container:hover {
     transition: all 200ms;
-    background-color: #a3d4ff;
-    box-shadow: 0 3px 8px solid rgba(0, 0, 0, 0.183);
+    background-color: #f4f5f7;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.183);
 }
 
 .compose-btn-container:hover span {
@@ -30,7 +30,7 @@
 }
 .compose-btn-container:hover .compose-img {
     transition: all 200ms;
-    filter: invert(32%) sepia(86%) saturate(850%) hue-rotate(183deg) brightness(94%) contrast(81%);
+    filter: invert(22%) sepia(34%) saturate(7160%) hue-rotate(352deg) brightness(74%) contrast(101%);
 }
 
 .email-compose-container {

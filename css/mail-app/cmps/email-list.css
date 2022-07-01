@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     overflow-y: auto;
-    max-height: 75vh;
+    max-height: 70vh;
 }
 .email-list-container {
     display: table;
