@@ -9,8 +9,8 @@ export default {
   template: `
         <section class="main-layout main-app email-app-container" v-if="emails">
           <div class="main-content-container">
-            <email-filter />
-            <email-list :emails="emails" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
+            <email-filter @searching="searchEmails"/>
+            <email-list :emails="emailsToShow" @read="saveEmail" @removed="moveToTrash" @starred="starEmail" :key="componentKey"/>
           </div>
           <div class="side-bar-container">
               <email-compose @added="addEmail" @to-draft="saveToDraft"/>
@@ -22,7 +22,7 @@ export default {
     emailList,
     emailFolderList,
     emailCompose,
-    emailFilter
+    emailFilter,
   },
   data() {
     return {
@@ -34,7 +34,8 @@ export default {
         isRead: false,
         isStarred: false,
       },
-      draftMail: null
+      draftMail: null,
+      searchVal: null,
     }
   },
   created() {
@@ -46,10 +47,9 @@ export default {
       this.emails = emails.reverse()
     })
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
-    emailsToShow() {
+    loadEmails() {
       emailService.query(this.criteria).then((emails) => {
         this.emails = emails.reverse()
       })
@@ -110,7 +110,8 @@ export default {
       })
     },
     saveToDraft(emailContent) {
-      if(!emailContent.to && !emailContent.subject && !emailContent.body) return
+      if (!emailContent.to && !emailContent.subject && !emailContent.body)
+        return
       if (!this.draftMail) {
         this.draftMail = emailService.getEmptyEmail()
       }
@@ -121,9 +122,41 @@ export default {
       this.draftMail.status = 'draft'
       emailService.save(this.draftMail)
       this.forceRerender()
-    }
+    },
+    searchEmails(val) {
+      this.searchVal = val
+      // this.loadEmails()
+      // this.emails = this.emails.filter(email => {
+      //   const {subject, body } = email
+      //   const sender = this.getSenderName(email)
+      //   var filterstrings = [subject,body,sender];
+      //   if (subject.includes(val) || body.includes(val)) return email
+      // })
+    },
   },
-  computed: {},
+  computed: {
+    getSenderName(email) {
+      if (!email) return
+      console.log(email)
+      const { from } = email
+      const sliceIdx = from.indexOf('@')
+      return from.slice(0, sliceIdx)
+    },
+    emailsToShow() {
+      if (!this.searchVal) return this.emails
+      const regex = new RegExp(this.searchVal, 'i')
+      let filteredEmails
+      filteredEmails = this.emails
+        .filter((email) => {
+          if (email.status === 'inbox/sent') return
+          regex.test(email.subject)
+        })
+        .concat(this.emails.filter((email) => 
+          regex.test(email.body)))
+        .concat(this.emails.filter((email) => regex.test(email.from)))
+      return filteredEmails
+    },
+  },
   watch: {
     '$route.path': {
       handler() {
