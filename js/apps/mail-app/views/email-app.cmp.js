@@ -125,36 +125,26 @@ export default {
     },
     searchEmails(val) {
       this.searchVal = val
-      // this.loadEmails()
-      // this.emails = this.emails.filter(email => {
-      //   const {subject, body } = email
-      //   const sender = this.getSenderName(email)
-      //   var filterstrings = [subject,body,sender];
-      //   if (subject.includes(val) || body.includes(val)) return email
-      // })
     },
   },
   computed: {
-    getSenderName(email) {
-      if (!email) return
-      console.log(email)
-      const { from } = email
-      const sliceIdx = from.indexOf('@')
-      return from.slice(0, sliceIdx)
-    },
     emailsToShow() {
       if (!this.searchVal) return this.emails
       const regex = new RegExp(this.searchVal, 'i')
-      let filteredEmails
-      filteredEmails = this.emails
+      let subjectFiltered = this.emails
         .filter((email) => {
-          if (email.status === 'inbox/sent') return
-          regex.test(email.subject)
+          return regex.test(email.subject)
         })
-        .concat(this.emails.filter((email) => 
-          regex.test(email.body)))
-        .concat(this.emails.filter((email) => regex.test(email.from)))
-      return filteredEmails
+        let from
+      let bodyFiltered = this.emails.filter(email => regex.test(email.body))
+      bodyFiltered = bodyFiltered.filter(email => {
+        const sliceIdx = email.from.indexOf('@')
+        from = email.from.slice(0, sliceIdx)
+        return !regex.test(email.subject) && !regex.test(from)
+    })
+
+      
+      return subjectFiltered.concat(bodyFiltered)
     },
   },
   watch: {
