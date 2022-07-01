@@ -16,7 +16,7 @@ export default {
               <email-compose @added="addEmail" @to-draft="saveToDraft"/>
               <email-folder-list @sorted="sortEmails"/>
               <div class="progress-bar-container">
-                <div class="progress-bar" :style="{ width: unreadPercent + '%' }">{{fixedCount}}%</div>
+                <div class="progress-bar" :style="{ width: (unreadPercent? unreadPercent : 10) + '%' }">{{fixedCount}}%</div>
               </div>
               <div class="unread-msg">
                 <p>You have {{unreadCount}} unread emails</p>
@@ -153,6 +153,8 @@ export default {
       this.forceRerender()
     },
     calcUnread() {
+      this.unreadCount = 0
+      this.unreadPercent = 0
       this.emails.forEach((email) => {
         if (!email.isRead) this.unreadCount++
       })
@@ -185,7 +187,7 @@ export default {
       return subjectFiltered.concat(bodyFiltered).concat(fromFilter)
     },
     fixedCount() {
-      return Math.round(this.unreadPercent)
+      return Math.round(this.unreadPercent)?  Math.round(this.unreadPercent) : 0
     }
   },
   watch: {
@@ -194,6 +196,7 @@ export default {
         this.criteria.status = this.$route.path.slice(10)
         emailService.query(this.criteria).then((emails) => {
           this.emails = emails.reverse()
+          this.calcUnread()
         })
       },
     },

@@ -22,14 +22,14 @@
 }
 
 .progress-bar-container {
-    width: 100%;
+    width: 80%;
     height: 30px;
     background-color: grey;
     border-radius: 10px;
     display: flex;
     align-items: center;
     outline: 2px solid rgba(0, 0, 0, 0.121);
-    margin-inline-start: 0.5rem;
+    margin-inline-start: 1rem;
     margin-block-start: 1rem;
 
 }
@@ -47,6 +47,6 @@
 .unread-msg p {
     margin-block-start: 0.8rem;
     font-weight: 600;
-    margin-inline-start: 0.5rem;
+    margin-inline-start: 1rem;
 
 }
