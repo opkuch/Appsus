@@ -120,5 +120,49 @@ function getNotes() {
             },
             backgroundColor: "white"
         },
+        {
+            id: "n107",
+            type: "note-video",
+            isPinned: true,
+            info: {
+                title: 'short movie',
+                url: "https://www.youtube.com/embed/tgbNymZ7vqY"
+            },
+            backgroundColor: "white"
+        },
+        {
+            id: "n108",
+            type: "note-todos",
+            isPinned: false,
+            info: {
+                title: "days",
+                todos: [
+                    { txt: "sunday", doneAt: null },
+                    { txt: "monday", doneAt: 187111111 },
+                    { txt: "tusday", doneAt: 187111111 },
+                ]
+            },
+            backgroundColor: "white"
+        },
+        {
+            id: "n109",
+            type: "note-txt",
+            isPinned: false,
+            info: {
+                title: 'Text',
+                txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum corrupti exercitationem nisi nulla repellendus, iure fuga quas voluptatibus eligendi ipsum fugit ..."
+            },
+            backgroundColor: "white"
+        },
+        {
+            id: "n110",
+            type: "note-img",
+            isPinned: false,
+            info: {
+                title: ":)",
+                url: "https://images.unsplash.com/photo-1464219551459-ac14ae01fbe0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            },
+            backgroundColor: "white"
+        },
     ]
 }

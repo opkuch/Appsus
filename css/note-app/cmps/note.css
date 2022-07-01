@@ -1,6 +1,5 @@
 .notes-list .note-container {
-    width: 200px;
-    margin: 0 1rem 1rem 0;
+    width: 100%;
     border: 1px solid rgb(193, 187, 187);
     padding: 0.5em;
     border-radius: 00.3em;
@@ -26,6 +25,10 @@
     margin-bottom: 1rem;
 }
 
+.note-container section {
+    flex-grow: 1;
+}
+
 .note-container img {
     width: 100%;
     object-fit: contain;
@@ -42,7 +45,6 @@
 
 .note-container .actions a {
     color: rgb(53, 54, 54);
-    ;
 }
 
 .note-container .actions button {
@@ -63,4 +65,9 @@
 
 .important {
     order: -1;
+}
+
+.note-container iframe{
+    width: 100%;
+    border: none;
 }

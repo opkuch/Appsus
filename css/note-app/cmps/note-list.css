@@ -1,18 +1,23 @@
 .notes-list {
-    /* background-color: rgba(213, 213, 228, 0.882); */
     width: 85%;
     margin: auto;
     max-height: 100vh;
 
-    padding: 1rem;
+    padding: 6px;
     text-align: center;
 
 
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: masonry;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    grid-auto-flow: dense;
+    justify-content: center;
+    gap: 30px;
 
+
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
     /* display: flex;
     flex-wrap: wrap;
     justify-content: space-around; */

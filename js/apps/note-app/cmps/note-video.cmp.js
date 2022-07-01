@@ -1,7 +1,7 @@
 export default {
     template: `
              <section>
-                <iframe width="420" height="315"
+                <iframe
                    :src="info.url">
                 </iframe>
              </section>
@@ -11,6 +11,9 @@ export default {
         return {
             val: ''
         }
+    },
+    mounted() {
+        console.log(this.info);
     },
     methods: {
     },

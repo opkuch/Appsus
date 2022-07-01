@@ -3,7 +3,7 @@
   .notes-list {
     display: grid;
     grid-template-columns: 1fr;
-    width: 90%;
+    width: 70%;
   }
 
   .notes-list .note-container {
@@ -11,7 +11,7 @@
     text-align: start;
   }
 
-  /* .notes-list img {
-    width: 100%;
-    /* object-fit: fill; */
+  .add-note-container .add-new-note-input {
+    width: 70%;
+  }
 }

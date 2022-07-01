@@ -6,7 +6,6 @@ import noteFilter from "../cmps/note-filter.cmp.js"
 export default {
     template: `
     <section class="note-app"> 
-        <img src="" alt="">
         <note-filter @filtered="setFilter"/>
         <note-add @saved="save"/>
         <note-list :notes="notesForDisplay" 
@@ -75,7 +74,7 @@ export default {
             notes = notes.filter((note) => {
                 // console.log(note);
                 // const noteVal = JSON.stringify(note.info);
-                console.log(JSON.stringify(note.info));
+                // console.log(JSON.stringify(note.info));
                 return note.type.includes(txt.toLowerCase())
                 //  note.info.title.includes(txt, toLowerCase())
                 // console.log(note.info);
