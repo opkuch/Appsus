@@ -16,6 +16,7 @@ export default {
                       <div class="send-details">
                         <div><span class="bold">From</span> <span>{{email.from}}</span></div>
                         <div><span class="bold">To</span> <span>{{email.to}}</span></div>
+                        <div class="bold date-details"><span>{{getDate}}</span></div>
                       </div>
                     </div>
                 </section>
@@ -65,6 +66,10 @@ export default {
       if (!this.email) return
       const emailDate = new Date(this.email.sentAt) + ''
       return emailDate.slice(16, 21)
+    },
+    getDate(){
+      if (!this.email) return
+      return (new Date(this.email.sentAt) + '').slice(0, 21)
     },
     getRightPath() {
       if (this.email.status === 'inbox/sent') {
