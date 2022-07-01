@@ -11,6 +11,7 @@
 @import './note-app/cmps/note-filter.css';
 @import './note-app/cmps/note-add.css';
 @import './note-app/cmps/note.css';
+@import './note-app/cmps/note-edit.css';
 
 /* MQ */
 @import './note-app/mq/mobile.css';

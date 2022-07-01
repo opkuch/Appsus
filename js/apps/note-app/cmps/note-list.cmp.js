@@ -12,20 +12,20 @@ export default {
                     <span v-if="note.isPinned" class="pinned-note"><i class="fa-solid fa-thumbtack"></i></span>
                 </div>
 
-                <note-preview :note="note"/>
+                 <note-preview :note="note"/>
 
                 <div class="actions">
-                 <button class="btn remove-note-btn" @click="remove(note.id)" title="delete"><i class="fa-solid fa-trash"></i></button>
-                 <router-link :to="'/missKeep/edit/'+note.id" title="edit"><i class="fa-solid fa-pen-to-square"></i></router-link>
-                   <label :for="note.id">
-                   <i class="fa-solid fa-palette"></i>
-                   <input :id="note.id" type="color" v-model="color" title="background color" @input="setBgClr(note)"/>
-                   </label>
-                   <button @click="setPinned(note)" title="pinned"><i class="fa-solid fa-thumbtack"></i></button>
+                  <button class="btn remove-note-btn" @click="remove(note.id)" title="delete"><i class="fa-solid fa-trash"></i></button>
+                   <router-link :to="'/missKeep/edit/'+note.id" title="edit"><i class="fa-solid fa-pen-to-square"></i></router-link>
+                      <label :for="note.id">
+                        <i class="fa-solid fa-palette"></i>
+                        <input :id="note.id" type="color" v-model="color" title="background color" @input="setBgClr(note)"/>
+                     </label>
+                  <button @click="setPinned(note)" title="pinned"><i class="fa-solid fa-thumbtack"></i></button>
                    <button @click="copy(note)" title="copy"><i class="fa-solid fa-copy"></i></button>
                 </div>
-                </div>
-            </section>
+            </div>
+        </section>
     `,
     props: ['notes'],
     data() {

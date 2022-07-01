@@ -30,7 +30,7 @@ function getEmptyNote() {
         id: '',
         type: 'note-txt',
         isPinned: false,
-        backgroundColor: '#rrggbb',
+        backgroundColor: 'white',
         info: {}
     }
 }
@@ -58,17 +58,17 @@ function getNotes() {
                 title: '',
                 txt: "Fullstack Me Baby!"
             },
-            backgroundColor: "lightgray"
+            backgroundColor: "white"
         },
         {
             id: "n102",
             type: "note-img",
             isPinned: false,
             info: {
-                title: "Bobi and Me",
-                url: "#rrggbb",
+                title: "My pizza",
+                url: "https://images.unsplash.com/photo-1584365685547-9a5fb6f3a70c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
             },
-            backgroundColor: "lightseagreen"
+            backgroundColor: "white"
         },
         {
             id: "n103",
@@ -80,7 +80,45 @@ function getNotes() {
                     { txt: "Driving liscence", doneAt: null },
                     { txt: "Coding power", doneAt: 187111111 }
                 ]
-            }
-        }
+            },
+            backgroundColor: "white"
+        },
+        {
+            id: "n104",
+            type: "note-img",
+            isPinned: true,
+            info: {
+                title: "shakshuka",
+                url: "https://images.unsplash.com/photo-1520218576172-c1a2df3fa5fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+            },
+            backgroundColor: "white"
+        },
+        {
+            id: "n105",
+            type: "note-todos",
+            isPinned: false,
+            info: {
+                title: "Get my stuff together",
+                todos: [
+                    { txt: "Do this", doneAt: null },
+                    { txt: "Do that", doneAt: 187111111 },
+                    { txt: "Go to sleep", doneAt: 187111111 },
+                    { txt: "Learn", doneAt: 187111111 },
+                    { txt: "Eat", doneAt: 187111111 },
+                    { txt: "Sleepp", doneAt: 187111111 },
+                ]
+            },
+            backgroundColor: "white"
+        },
+        {
+            id: "n106",
+            type: "note-txt",
+            isPinned: false,
+            info: {
+                title: 'Text',
+                txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum corrupti exercitationem nisi nulla repellendus, iure fuga quas voluptatibus eligendi ipsum fugit ut inventore harum quibusdam ratione et reprehenderit temporibus sapiente?"
+            },
+            backgroundColor: "white"
+        },
     ]
 }
