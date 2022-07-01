@@ -9,4 +9,15 @@
     justify-content: center;
     margin-inline-end: 1rem;
     flex-basis: 20%;
+    margin-block-start: 0.5rem;
+}
+
+.main-content-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;
+}
+
+.user-icon {
+    max-width: 40px;
 }

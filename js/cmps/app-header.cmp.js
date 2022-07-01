@@ -1,12 +1,12 @@
 export default {
   template: `
             <header class="main-header">
-                <div class="logo-container">
-                    <h1>Appsus</h1>
-                    <div class="logo-img-container">
-
-                    </div>
+              <section class="header">
+                <h1><span>App</span>sus</h1>
+                <div class="logo-img-container">
+                    <img src="assets/logo-img/horse1.png"/>
                 </div>
+              </section>
               <nav class="main-nav">
                     <!-- <router-link to="/bookHome">miss books</router-link> -->
                     <router-link to="/missKeep">miss note</router-link>

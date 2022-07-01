@@ -52,6 +52,8 @@ function getEmptyEmail() {
     from: user.email,
     to: '',
     status: 'inbox',
+    isDraft: false,
+    isStarred: false
   }
 }
 
