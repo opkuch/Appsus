@@ -1,7 +1,7 @@
  export default {
  template:`
         <section class="filter-container">
-            <input class="input-txt" type="text" placeholder="Search Email" v-model="searchVal" @input="search">
+            <input class="input-txt" type="text" placeholder="Search Email 🔎︎" v-model="searchVal" @input="search">
         </section>
         `,
     components: {},

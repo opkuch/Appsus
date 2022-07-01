@@ -1,7 +1,7 @@
 import emailSort from './email-sort.cmp.js' 
  export default {
  template:`
-            <section class="main-app email-folders">
+            <section class="email-folders">
                 <ul class="clean-list">
                     <router-link class="ibx" :to="'/emailApp/' + 'inbox'" >
                         <li class="inbox-container">

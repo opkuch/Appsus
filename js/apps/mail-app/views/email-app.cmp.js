@@ -14,7 +14,13 @@ export default {
           </div>
           <div class="side-bar-container">
               <email-compose @added="addEmail" @to-draft="saveToDraft"/>
-            <email-folder-list @sorted="sortEmails"/>
+              <email-folder-list @sorted="sortEmails"/>
+              <div class="progress-bar-container">
+                <div class="progress-bar" :style="{ width: unreadPercent + '%' }">{{fixedCount}}%</div>
+              </div>
+              <div class="unread-msg">
+                <p>You have {{unreadCount}} unread emails</p>
+              </div>
           </div>
         </section>
         `,
@@ -36,6 +42,8 @@ export default {
       },
       draftMail: null,
       searchVal: null,
+      unreadCount: 0,
+      unreadPercent: 0
     }
   },
   created() {
@@ -45,15 +53,11 @@ export default {
     }
     emailService.query(this.criteria).then((emails) => {
       this.emails = emails.reverse()
+      this.calcUnread()
     })
   },
   mounted() {},
   methods: {
-    loadEmails() {
-      emailService.query(this.criteria).then((emails) => {
-        this.emails = emails.reverse()
-      })
-    },
     saveEmail(emailId) {
       const emailIdx = this.emails.findIndex((email) => email.id === emailId)
       emailService.save(this.emails[emailIdx])
@@ -127,21 +131,33 @@ export default {
       this.searchVal = val
     },
     sortEmails(sortBy) {
-      switch(sortBy) {
+      switch (sortBy) {
         case 'subject':
-          this.emails = this.emails.sort((email1,email2) => email1.subject.localeCompare(email2.subject))
+          this.emails = this.emails.sort((email1, email2) =>
+            email1.subject.localeCompare(email2.subject)
+          )
           break
         case 'content':
-          this.emails = this.emails.sort((email1, email2) => email1.body.localeCompare(email2.body))
+          this.emails = this.emails.sort((email1, email2) =>
+            email1.body.localeCompare(email2.body)
+          )
         case 'user':
-          this.emails = this.emails.sort((email1, email2) => email1.from.localeCompare(email2.from))
+          this.emails = this.emails.sort((email1, email2) =>
+            email1.from.localeCompare(email2.from)
+          )
         case 'date':
           this.emails = this.emails.sort((email1, email2) => {
             return email1.sentAt - email2.sentAt
           })
       }
       this.forceRerender()
-    }
+    },
+    calcUnread() {
+      this.emails.forEach((email) => {
+        if (!email.isRead) this.unreadCount++
+      })
+      this.unreadPercent =  this.unreadCount / this.emails.length * 100
+    },
   },
   computed: {
     emailsToShow() {
@@ -168,7 +184,9 @@ export default {
       )
       return subjectFiltered.concat(bodyFiltered).concat(fromFilter)
     },
-
+    fixedCount() {
+      return Math.round(this.unreadPercent)
+    }
   },
   watch: {
     '$route.path': {
