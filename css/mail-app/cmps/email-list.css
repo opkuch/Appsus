@@ -2,15 +2,13 @@
     margin: 0;
     padding: 0;
     overflow-y: auto;
-    max-height: 70vh;
+    max-height: 68vh;
 }
 .email-list-container {
     display: table;
     background-color: rgba(250, 246, 243, 0.568);
     border-top: 1.5px solid rgba(0, 0, 0, 0.205);
-
 }
-
 
 li.not-read{
     font-weight: 700;
@@ -19,4 +17,55 @@ li.not-read{
 li.read {
     font-weight: 400;
     /* background-color: rgb(224, 224, 224); */
+}
+.sort-container {
+    justify-content: space-between;
+    background-color: rgb(225, 223, 223);
+    display: flex;
+    align-items: center;
+    user-select: none;
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.205);
+    transition: all  200ms;
+    padding: 0.4rem;
+    font-size: 1.1rem;
+    font-family: Nunito-Sans;
+}
+
+.sort-container .email-prev-header {
+    flex-basis: 10%;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    padding: 0.2rem;
+
+}
+
+.sort-container .email-prev-body {
+    flex-basis: 60%;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+
+} 
+
+.sort-container .email-prev-body > * {
+    transition: all 100ms ease-in-out;
+    justify-content: center;
+    padding: 0.2rem;
+}
+
+.sort-container .email-prev-header:active, .sort-container .email-prev-body span:active{
+    transition: all 100ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.128);
+    border-radius: 50px;
+}
+.sort-container .email-prev-header:hover, .sort-container .email-prev-body span:hover{
+    transition: all 100ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.128);
+    border-radius: 50px;
+}
+
+.sort-container .content {
+    margin-inline-start: 2rem;
 }

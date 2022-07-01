@@ -1,0 +1,59 @@
+
+.sorting-option {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms;
+
+}
+
+.sorting-option button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.email-folders li:hover .sorting-option {
+    opacity: 1;
+    pointer-events: all;
+
+}
+
+.sorting-option img {
+    margin-inline-start: 50px;
+    height: 20px;
+    width: 20px;
+}
+
+.sorting-option img:hover {
+    filter: invert(77%) sepia(1%) saturate(3918%) hue-rotate(154deg) brightness(70%) contrast(84%);
+}
+
+label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  label select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0 5px 0 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    /* background: #6d6bb53; */
+    height: 20px;
+    font-size: 0.75rem;
+    margin-inline-start: 0.3rem;
+  }
+
+  label select:focus {
+    outline: none;
+  }
+
+  label span {
+    font-size: 0.9rem;
+  }

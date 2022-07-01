@@ -79,26 +79,6 @@
     margin-inline-start: 0.5rem;
     border-radius: 3px;
 }
-.input-txt {
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid #9b9b9b;
-    outline: 0;
-    color: rgb(24, 22, 22);
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-}
-
-.input-txt:focus {
-    padding-bottom: 6px;
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #11998e, #38d3ef);
-    border-image-slice: 1;
-}
-
 
 .compose-body textarea {
     border: none;

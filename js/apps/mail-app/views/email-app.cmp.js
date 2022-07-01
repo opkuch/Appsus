@@ -14,7 +14,7 @@ export default {
           </div>
           <div class="side-bar-container">
               <email-compose @added="addEmail" @to-draft="saveToDraft"/>
-            <email-folder-list />
+            <email-folder-list @sorted="sortEmails"/>
           </div>
         </section>
         `,
@@ -126,6 +126,22 @@ export default {
     searchEmails(val) {
       this.searchVal = val
     },
+    sortEmails(sortBy) {
+      switch(sortBy) {
+        case 'subject':
+          this.emails = this.emails.sort((email1,email2) => email1.subject.localeCompare(email2.subject))
+          break
+        case 'content':
+          this.emails = this.emails.sort((email1, email2) => email1.body.localeCompare(email2.body))
+        case 'user':
+          this.emails = this.emails.sort((email1, email2) => email1.from.localeCompare(email2.from))
+        case 'date':
+          this.emails = this.emails.sort((email1, email2) => {
+            return email1.sentAt - email2.sentAt
+          })
+      }
+      this.forceRerender()
+    }
   },
   computed: {
     emailsToShow() {
@@ -152,6 +168,7 @@ export default {
       )
       return subjectFiltered.concat(bodyFiltered).concat(fromFilter)
     },
+
   },
   watch: {
     '$route.path': {
