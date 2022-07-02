@@ -14,9 +14,6 @@ export default {
             val: ''
         }
     },
-    mounted() {
-        console.log(this.info);
-    },
     methods: {
     },
     computed: {

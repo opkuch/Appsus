@@ -63,9 +63,9 @@ export default {
       })
     },
     sendInfo(info) {
-        const valuesStr = JSON.stringify(info)
-        const infoValues = Object.values(JSON.parse(valuesStr))
-        emailService.saveNoteInfo(infoValues)
+      const valuesStr = JSON.stringify(info)
+      const infoValues = Object.values(JSON.parse(valuesStr))
+      emailService.saveNoteInfo(infoValues)
         .then(res => console.log(res))
     }
   },
@@ -76,20 +76,31 @@ export default {
 
       let notes = this.notes
       notes = notes.filter((note) => {
-        // console.log(note);
-        // const noteVal = JSON.stringify(note.info);
-        // console.log(JSON.stringify(note.info));
-        return note.type.includes(txt.toLowerCase())
-        //  note.info.title.includes(txt, toLowerCase())
-        // console.log(note.info);
-        // console.log(Object.values(note.info));
-        // console.log(note.info.);
-      })
-      return notes
-    },
+      //   if(note.type === 'note-todos') {
+      //     const todos = []
+      //     note.info.todos.map((todo) => {
+      //       todos.push(todo.txt)
+      //     })
+
+      //   }
+      // console.log(note);
+      // const noteVal = JSON.stringify(note.info);
+      // console.log(JSON.stringify(note.info));
+      // Object.values(note.info).map(val=>{
+      //   console.log(val);
+      // })
+      // console.log(Object.values(note.info));
+      // return Object.values(note.info).includes(txt.toLowerCase())
+      return note.type.includes(txt.toLowerCase())
+      //  note.info.title.includes(txt, toLowerCase())
+      // console.log(note.info);
+      // console.log(note.info.);
+    })
+    return notes
   },
-  components: {
-    noteList,
+},
+components: {
+  noteList,
     noteAdd,
     noteFilter,
   },

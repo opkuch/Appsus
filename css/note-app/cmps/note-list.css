@@ -6,7 +6,7 @@
     padding: 6px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 350px));
+    grid-template-columns: repeat(4, minmax(130px, 350px));
     grid-auto-rows: min-content;
     grid-auto-flow:dense;
     justify-content: center;
