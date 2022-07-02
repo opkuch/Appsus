@@ -80,6 +80,7 @@ export default {
         this.emails.unshift(email)
       })
       this.forceRerender()
+      this.showUserMsg({type: 'success', txt: 'Email sent'})
     },
     moveToTrash(emailId) {
       emailService.get(emailId).then((email) => {
@@ -90,6 +91,7 @@ export default {
           )
           this.emails.splice(idx, 1)
           this.forceRerender()
+          this.showUserMsg({type: 'success', txt: 'Email Deleted'})
           return
         }
         email.status = 'trash'
@@ -100,6 +102,7 @@ export default {
           )
           this.emails.splice(idx, 1)
         })
+        this.showUserMsg({type: 'success', txt: 'Email moved to trash folder'})
         this.forceRerender()
       })
     },
@@ -131,6 +134,7 @@ export default {
       this.draftMail.body = body
       this.draftMail.status = 'draft'
       emailService.save(this.draftMail)
+      this.showUserMsg({type: 'success', txt: 'Email Save To Draft'})
       this.forceRerender()
     },
     searchEmails(val) {
@@ -169,6 +173,12 @@ export default {
     toggleRead(email) {
       emailService.save(email)
       this.forceRerender()
+    },
+    showUserMsg({type, txt}) {
+      eventBus.emit('show-msg', {
+        txt,
+        type,
+      })
     }
   },
   computed: {
@@ -199,7 +209,6 @@ export default {
     fixedCount() {
       return Math.round(this.unreadPercent)?  Math.round(this.unreadPercent) : 0
     },
-
   },
   watch: {
     '$route.path': {

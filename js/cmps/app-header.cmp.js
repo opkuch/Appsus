@@ -2,7 +2,7 @@ export default {
   template: `
             <header class="main-header">
               <section class="header">
-              <router-link :to=" ">
+              <router-link :to="''">
                 <div class="logo-img-container">
                       <img src="assets/logo-img/horse1.png"/>
                 </div>
@@ -35,7 +35,6 @@ export default {
   },
   computed: {
     appMenuStyle() {
-      console.log(this.showApps);
       return {'menu-active': this.showApps, '': !this.showApps}
     },
   },

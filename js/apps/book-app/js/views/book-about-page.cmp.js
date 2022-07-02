@@ -2,7 +2,7 @@ export default {
     template: `
       <section class="main-layout main-app about-us-page-container">
         <div class="about-us-img-container">
-          <!-- <img src="img/about-us.jpg" /> -->
+          <img src="assets/book-img/about-us.jpg" />
         </div>
         <div class="about-us-container">
           <h1>About <span>Us</span></h1>

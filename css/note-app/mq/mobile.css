@@ -34,4 +34,8 @@
 .note-edit {
   width: 80%;
 }
+
+.add-actions-btns {
+  margin-block-start: 0.5rem;
+}
 }

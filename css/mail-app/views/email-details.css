@@ -2,7 +2,7 @@
 .email-details-container {
     display: flex;
     flex-direction: row-reverse;
-    font-family: 'Anek Malayalam';
+    font-family: 'Anek-Telugu';
     /* padding-block: 1rem; */
 }
 .email-content {

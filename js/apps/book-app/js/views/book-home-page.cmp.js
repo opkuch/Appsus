@@ -2,7 +2,7 @@ export default {
   template: `
     <section class="main-layout main-app home-page-container ">
       <div class="home-img-container">
-        <img src="img/home-img.jpg" />
+        <img src="assets/book-img/home-img.jpg" />
       </div>
       <div class="welcome-container">
         <h1>Welcome to <span>miss</span> books</h1>

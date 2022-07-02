@@ -75,7 +75,7 @@
 
 }
 .star-container:hover, .trash-container:hover, .read-container:hover, .send-icon-container:hover {
-    background-color: rgba(222, 220, 220, 0.495);
+    background-color: rgba(188, 188, 188, 0.817);
     border-radius: 50%;
     transition: all 200ms;
 }

@@ -43,7 +43,6 @@
     },
   created() {   
   },
-
  methods: {
     add() {
         this.$emit('added', this.emailContent)
@@ -58,7 +57,7 @@
         if (this.isShow) {
             this.intervalId = setInterval(() => {
                 this.$emit('toDraft', this.emailContent)
-            },1000)
+            },10000)
         }
         else clearInterval(this.intervalId)
     }

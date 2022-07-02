@@ -112,23 +112,19 @@
     background-color: #2e333a;
     color: whitesmoke;
 }
-.close-btn {
+.book-details .close-btn {
     background-color: transparent;
     border: none;
     font-size: 1.1rem;
     color: rgb(102, 13, 13);
     cursor: pointer;
     text-decoration: none;
-}
-.add-review-btn:hover, .review-list-btn:hover {
-    color: lightblue;
-}
-
-.close-btn {
-    background-color: azure;
     padding: 0 10px;
     border-radius: 5px;
     font-size: 1.3rem;
+}
+.add-review-btn:hover, .review-list-btn:hover {
+    color: lightblue;
 }
 
 .close-modal-btn {

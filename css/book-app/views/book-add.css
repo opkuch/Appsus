@@ -3,6 +3,11 @@
     padding: 0.3rem;
     background-color: #7b212165;
     /* border-radius: 5px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 .add-book-container label {
     font-weight: 700;
@@ -12,7 +17,15 @@
 }
 .add-book-container input {
     margin-inline-start: 1rem;
+    background-color: rgba(245, 245, 245, 0.279);
+    width: 50%;
+    font-size: 1.2rem;
 }
+
+.add-book-container input::placeholder {
+    font-size: 1.2rem;
+}
+
 .add-book-container ul {
     margin-inline-start: 2rem;
 }

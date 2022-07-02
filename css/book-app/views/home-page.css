@@ -26,6 +26,10 @@
     align-items: center;
 }
 
+.welcome-container p {
+    inline-size: 300px;
+}
+
 .welcome-container h1 {
     font-size: 2rem;
     margin: 0;
@@ -38,7 +42,7 @@
     text-decoration: none;
     color: rgb(130, 26, 33);
     font-size: 1.5rem;
-    transition: padding 400ms;
+    transition: padding 150ms ;
     outline: 2px solid rgba(0, 0, 0, 0.21);
     background-color: #a8c9da;
     padding: 3px;
@@ -52,6 +56,7 @@
 
 .explore-btn:hover::after {
     content: "→";
+    opacity: 1;
     position: absolute;
     margin-inline-start: 0.4rem;
 }

@@ -63,8 +63,8 @@ function getNotes() {
       type: 'note-txt',
       isPinned: false,
       info: {
-        title: '',
-        txt: 'Fullstack Me Baby!',
+        title: 'story time',
+        txt: `Once upon a time, a very long time ago now, about last Friday, Winnie-the-Pooh lived in a forest all by himself under the name of Sanders. ("What does 'under the name' mean?" asked Christopher Robin. "It means he had the name over the door in gold letters, and lived under it." "Winnie-the-Pooh wasn't quite sure," said Christopher Robin. "Now I am," said a growly voice. "Then I will go on," said I.) One day when he was out walking, he came to an open place in the middle of the forest, and in the middle of this place was a large oak-tree, and, from the top of the tree, there came a loud buzzing-noise.`,
       },
       backgroundColor: '#FFAAAA',
     },

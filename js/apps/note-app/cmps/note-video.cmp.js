@@ -2,7 +2,9 @@ export default {
     template: `
              <section>
                 <iframe
-                   :src="info.url">
+                   :src="info.url"
+                   height="300px"
+                   >
                 </iframe>
              </section>
           `,

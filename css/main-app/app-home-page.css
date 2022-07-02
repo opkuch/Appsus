@@ -1,0 +1,45 @@
+.app-home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block-start: 3rem;
+
+}
+.app-home-nav {
+    position: absolute;
+    top: 20%;
+    font-size: 1.3rem;
+
+}
+.app-home-nav a {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.app-home-nav .note-lnk::after {
+    font-size: 1.3rem;
+    left: 8%;
+    top: 90%;
+}
+
+.app-home-nav .book-lnk::after {
+    font-size: 1.3rem;
+    left: 40%;
+    top: 90%;
+}
+.app-home-nav .mail-lnk::after {
+    font-size: 1.3rem;
+    left: 80%;
+    top: 90%;
+}
+
+.app-home-nav img {
+    width: 100px;
+    height: 100px;
+    margin-inline-start: 1rem;
+}
+
+.home-app-txt {
+    font-size: 1.8rem;
+}

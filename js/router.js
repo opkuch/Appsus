@@ -4,8 +4,8 @@ import appHomePage from "./views/app-home-page.cmp.js"
 import noteApp from "./apps/note-app/views/note-app.cmp.js"
 import noteEdit from "./apps/note-app/views/note-edit.cmp.js"
 
-import bookHomePage from "./apps/book-app/js/views/home-page.cmp.js"
-import bookAboutPage from "./apps/book-app/js/views/about-page.cmp.js"
+import bookHomePage from "./apps/book-app/js/views/book-home-page.cmp.js"
+import bookAboutPage from "./apps/book-app/js/views/book-about-page.cmp.js"
 import bookApp from "./apps/book-app/js/views/book-app.cmp.js"
 import bookDetails from "./apps/book-app/js/views/book-details.cmp.js"
 
@@ -35,13 +35,11 @@ const routes = [
     },
     {
         path: '/book',
-        component: bookApp,
-        children: [
-            {
-                path: '/book/:bookId',
-                component: bookDetails
-            },
-        ]
+        component: bookApp
+    },
+    {
+        path: '/book/:bookId',
+        component: bookDetails
     },
     {
         path: '/emailApp/',

@@ -71,6 +71,7 @@ export default {
     sendToNotes() {
       const {subject, body} = this.email
       notesService.addEmailToNotes(subject, body)
+      eventBus.emit('show-msg', {type: 'success', txt: 'Email Sent to Note App'})
     }
   },
   computed: {

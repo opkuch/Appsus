@@ -27,8 +27,7 @@ export default {
     return {
     }
   },
-  created() {
-  },
+  created() { },
   methods: {
     read() {
         this.email.isRead = true
@@ -70,7 +69,7 @@ export default {
       return {'starred': this.email.isStarred, '': !this.email.isStarred}
     },
     getSubject() {
-      if(this.email.subject.length > 30) return this.email.subject.slice(0,30) + '..'
+      if(this.email.subject && this.email.subject.length > 30) return this.email.subject.slice(0,30) + '..'
       else return this.email.subject
     }
   },

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam&family=Anek+Telugu&family=Battambang:wght@300&family=Jolly+Lodger&family=Lobster&family=Mr+Dafoe&family=Roboto:wght@300&family=Satisfy&family=VT323&family=Work+Sans&display=swap');
 /* MAIN-APP */
 @import './main-app/app-header.css';
+@import './main-app/app-home-page.css';
 
 /* base */
 @import './basic/base.css';
@@ -50,14 +50,11 @@
 @import './book-app/basic/helpers.css'; */
 
 /* book cmps */
-/* @import './book-app/views/about-us.css';
-@import './book-app/views/app-header.css';
-@import './book-app/views/app-footer.css';
-@import './book-app/views/book-app.css';
+@import './book-app/views/about-us.css';
 @import './book-app/views/book-details.css';
 @import './book-app/views/book-add.css';
-@import './book-app/views/hompage.css';
+@import './book-app/views/home-page.css';
 @import './book-app/cmps/book-filter.css';
 @import './book-app/cmps/book-review.css';
-@import './book-app//cmps/book-list.css';
-@import './book-app/cmps/user-msg.css'; */
+@import './book-app/cmps/book-list.css';
+@import './book-app/cmps/user-msg.css';

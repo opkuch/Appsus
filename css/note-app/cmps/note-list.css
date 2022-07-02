@@ -21,9 +21,7 @@
     /* grid-template-columns: repeat(3, 1fr); */
     /* gap: 0.5rem;   */
 }
-.notes-list :nth-child(3) {
-    grid-column: span 2;
-}
+
 .notes-list .note-container.get-long {
     grid-row: span 2;
 }

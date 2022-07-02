@@ -2,8 +2,7 @@ export default {
   props: ['bookTitles'],
   template: `
         <section class="main-layout add-book-container">
-            <label for="book-search">Search for books</label>
-            <input type="text" v-model="searchVal" @input="search" name="book-search"/>
+            <input class="input-txt" placeholder="Search for books online" type="text" v-model="searchVal" @input="search" name="book-search"/>
             <ul class="clean-list" v-if="searchVal">
                 <li v-for="bookTitle in bookTitles" class="search-title">
                     <span>{{bookTitle.title}}</span>

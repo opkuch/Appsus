@@ -38,7 +38,6 @@
 }
 .note-container iframe {
     margin-block-start: 0.5rem;
-    max-height: 100%;
 }
 
 .note-container .actions {
@@ -79,6 +78,8 @@
 .note-container iframe{
     width: 100%;
     border: none;
+    position: relative;
+    bottom: 40px;
 }
 
 .note-txt-container p {

@@ -5,8 +5,9 @@
     position: absolute;
     top: 70px;
     right: 10px;
-    background-color: lightgreen;
-    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem;
 }
 
 .user-msg span {
@@ -14,9 +15,10 @@
 }
 
 .success {
-    background-color: rgb(236, 240, 244);
-    outline: 3px solid rgba(52, 205, 52, 0.742);
+    background-color: rgb(249, 251, 253);
+    box-shadow: inset 0 -5px 2px rgba(205, 52, 52, 0.942);;
     border-radius: 5px;
+    outline: 2px solid rgba(0, 0, 0, 0.259);
 }
 
 .error{

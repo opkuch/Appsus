@@ -67,7 +67,7 @@
 
 }
 
-.remove-btn {
+.book-list-container .remove-btn {
     background-color: rgba(145, 35, 35, 0.9);
     color: whitesmoke;
 }
