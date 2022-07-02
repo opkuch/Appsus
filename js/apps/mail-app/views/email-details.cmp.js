@@ -13,7 +13,7 @@ export default {
                   <div class="subject-container">
                     <h1>{{email.subject}}</h1>
                     <section class="content-actions">
-                    <div @click="sendToNotes" class="send-icon-container" title="Send"><img class="note-icon" src="assets/mail-img/icons/paper-plane-outline.svg"></div>
+                    <div @click="sendToNotes" class="send-icon-container" title="Send to Notes"><img class="note-icon" src="assets/mail-img/icons/paper-plane-outline.svg"></div>
                       <div class="read-container"><img class="read-icon" :src="getReadIcon" @click.stop.prevent="toggleIsRead" /></div>
                       <a @click="starEmail" class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" :class="getStarStyle"/></a>
                       <router-link :to="'/emailApp/' + getRightPath" @click="moveToTrash" class="remove-btn"> 

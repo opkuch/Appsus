@@ -23,7 +23,7 @@
                             <textarea name="email-body" cols="45" rows="10" v-model="emailContent.body">
                             </textarea>
                         </div>
-                        <button class="submit-btn" type="submit">Submit</button>
+                        <button class="submit-btn" type="submit">Send</button>
                     </form>
                 </div>
             </section>
