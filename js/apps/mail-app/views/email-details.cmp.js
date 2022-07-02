@@ -1,7 +1,8 @@
 import { emailService } from '../services/email-service.js'
+import { notesService } from '../../note-app/services/note-service.cmp.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 import emailFolderList from '../cmps/email-folder-list.cmp.js'
 import emailCompose from '../cmps/email-compose.cmp.js'
-import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
   template: `
@@ -12,6 +13,7 @@ export default {
                   <div class="subject-container">
                     <h1>{{email.subject}}</h1>
                     <section class="content-actions">
+                    <div @click="sendToNotes" class="send-icon-container" title="Send"><img class="note-icon" src="assets/mail-img/icons/paper-plane-outline.svg"></div>
                       <div class="read-container"><img class="read-icon" :src="getReadIcon" @click.stop.prevent="toggleIsRead" /></div>
                       <a @click="starEmail" class="star-container"><img class="star-icon" src="assets/mail-img/icons/star-outline.svg" :class="getStarStyle"/></a>
                       <router-link :to="'/emailApp/' + getRightPath" @click="moveToTrash" class="remove-btn"> 
@@ -65,6 +67,10 @@ export default {
     toggleIsRead() {
       this.email.isRead = !this.email.isRead
       emailService.save(this.email)
+    },
+    sendToNotes() {
+      const {subject, body} = this.email
+      notesService.addEmailToNotes(subject, body)
     }
   },
   computed: {
@@ -95,6 +101,7 @@ export default {
       if (this.email.isRead) return 'assets/mail-img/icons/mail-open.svg'
        else return 'assets/mail-img/icons/mail-close.svg'
     },
+
 
   },
 }

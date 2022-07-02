@@ -1,4 +1,4 @@
-@media(max-width: 800px) {
+@media(max-width: 890px) {
     body {
         overflow-x: hidden;
     }
@@ -13,7 +13,7 @@
         flex-direction: column-reverse;
     }
     .content-body p {
-        inline-size: 180px;
+        inline-size: 250px;
     }
     .subject-container {
         flex-direction: column;

@@ -4,7 +4,7 @@ export default {
     template: `
             <form @submit.prevent="save" class="add-note-container">
                 <div class="add-new-note-input">
-                   <input type="text" :placeholder="setInputPlaceHolder" v-model="txt" ref="addInput"/>
+                   <input class="input-txt" type="text" :placeholder="setInputPlaceHolder" v-model="txt" ref="addInput"/>
                       <div class="add-actions-btns">
                         <button @click="setNewType('note-txt')" title="text note" type="button"><i class="fa-solid fa-comment"></i></button>
                         <button @click="setNewType('note-img')" title="image note" type="button"><i class="fa-solid fa-image"></i></button>
@@ -61,7 +61,7 @@ export default {
                 this.newNote.info = {
                     txt: this.txt
                 }
-                return 'Enter text...'
+                return "What's on your mind..."
             } else if (type === 'note-img') {
                 this.newNote.info = {
                     url: this.txt

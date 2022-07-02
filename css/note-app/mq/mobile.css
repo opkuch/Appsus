@@ -1,17 +1,37 @@
-@media (max-width:700px) {
+@media (max-width:800px) {
 
   .notes-list {
     display: grid;
-    grid-template-columns: 1fr;
-    width: 70%;
+    grid-template-columns: minmax(150px, 350px);
+    width: 90vw;
   }
 
   .notes-list .note-container {
-    width: 100%;
+    width: 90%;
     text-align: start;
+    margin: 0 auto;
   }
 
   .add-note-container .add-new-note-input {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 70%;
   }
+  .add-new-note-input input::placeholder {
+    font-size: 0.8rem;
+  }
+  .notes-list :nth-child(4) {
+    grid-column: span 2;
+}
+.notes-list :nth-child(2) {
+    grid-column: span 2;
+}
+.notes-list :nth-child(1) {
+  grid-column: span 2;
+}
+
+.note-edit {
+  width: 80%;
+}
 }

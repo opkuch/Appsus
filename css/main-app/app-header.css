@@ -46,6 +46,7 @@
     transition: all 400ms;
     transform: translateY(-130%);
     font-size: 1.4rem;
+    z-index: 10;
 }
 .main-nav.menu-active {
     transform: translateY(100%);

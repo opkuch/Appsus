@@ -1,6 +1,6 @@
 export default {
     template: `
-             <section>
+             <section class="note-txt-container">
                   <p>{{info.txt}}</p>
              </section>
           `,

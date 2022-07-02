@@ -74,7 +74,7 @@
     filter: invert(7%) sepia(6%) saturate(6829%) hue-rotate(295deg) brightness(106%) contrast(103%);
 
 }
-.star-container:hover, .trash-container:hover, .read-container:hover {
+.star-container:hover, .trash-container:hover, .read-container:hover, .send-icon-container:hover {
     background-color: rgba(222, 220, 220, 0.495);
     border-radius: 50%;
     transition: all 200ms;

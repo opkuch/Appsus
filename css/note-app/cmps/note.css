@@ -1,45 +1,54 @@
 .notes-list .note-container {
     width: 100%;
-    border: 1px solid rgb(193, 187, 187);
-    padding: 0.5em;
     border-radius: 00.3em;
     transition: 0.2s;
-
     min-height: 100px;
     position: relative;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     text-align: left;
+    outline: 5px solid rgba(0, 0, 0, 0.115);
+    padding-block-end: 3.3rem;
 }
 
 .notes-list .note-container:hover {
-    box-shadow: 0px 0px 3px 0px #000000da;
-    border: 1px grey solid;
+    box-shadow: 0px 0px 3px 0px #0000002b;
 }
 
 .note-container .title {
-    border-bottom: 1px solid rgb(185, 184, 184);
-    padding: 0.3rem;
-    margin-bottom: 1rem;
+    margin-inline-start: 1rem;
+    margin-block-start: 0.5rem;
+    font-size: 1.3rem;
 }
 
-.note-container section {
+.note-container .note-img-container {
     flex-grow: 1;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
 }
 
 .note-container img {
-    width: 100%;
+    max-width: 90%;
+    max-height: 90%;
     object-fit: contain;
+    padding-block: 1rem;
+    border-radius: 25px;
+
+}
+.note-container iframe {
+    margin-block-start: 0.5rem;
+    max-height: 100%;
 }
 
 .note-container .actions {
-    margin-top: 1rem;
+    position: absolute;
+    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    margin-top: 0.5rem;
+    align-items: flex-start;
     color: rgb(53, 54, 54);
 }
 
@@ -70,4 +79,10 @@
 .note-container iframe{
     width: 100%;
     border: none;
+}
+
+.note-txt-container p {
+    margin-inline-start: 1rem;
+    inline-size: 90%;
+    margin-block-start: 0.5rem;
 }

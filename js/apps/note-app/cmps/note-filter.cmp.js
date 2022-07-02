@@ -1,7 +1,7 @@
 export default {
     template: `
         <section class="notes-filter">
-                 <input type="text" v-model="filterBy.txt" @input="setFilter" placeholder="Search..."/>
+                 <input class="input-txt" type="text" v-model="filterBy.txt" @input="setFilter" placeholder="Search..."/>
             </section>
     `,
     data() {

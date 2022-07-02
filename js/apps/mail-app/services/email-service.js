@@ -8,6 +8,7 @@ export const emailService = {
   save,
   getEmptyEmail,
   remove,
+  saveNoteInfo
 }
 
 const EMAIL_KEY = 'demoemailDB'
@@ -55,6 +56,17 @@ function getEmptyEmail() {
     isDraft: false,
     isStarred: false
   }
+}
+
+function saveNoteInfo(infoValues) {
+  const newEmail = getEmptyEmail()
+  newEmail.subject = infoValues[0]
+  newEmail.body = infoValues[1]
+  newEmail.to = emailDataService.getLoggedUser().email
+  newEmail.from = 'My Notes'
+  return save(newEmail)
+  .then(email => 'success')
+  .catch(err => console.log(err, 'Something went wrong'))
 }
 
 function _createEmails() {

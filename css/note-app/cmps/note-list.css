@@ -1,21 +1,17 @@
 .notes-list {
-    width: 85%;
+    width: 80vw;
     margin: auto;
-    max-height: 100vh;
-
+    max-height: 62vh;
+    overflow: auto;
     padding: 6px;
     text-align: center;
-
-
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-auto-rows: min-content; */
+    grid-template-rows: repeat(auto-fit, minmax(150px, 250px));
     grid-auto-flow: dense;
     justify-content: center;
     gap: 30px;
-
-
     /* display: grid;
     grid-template-columns: repeat(3, 1fr); */
     /* display: flex;
@@ -25,8 +21,23 @@
     /* grid-template-columns: repeat(3, 1fr); */
     /* gap: 0.5rem;   */
 }
+.notes-list :nth-child(3) {
+    grid-column: span 2;
+}
+.notes-list .note-container.get-long {
+    grid-row: span 2;
+}
+.notes-list .note-container.get-wide {
+    grid-column: span 2;
+}
 
 .notes-list .title {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.notes-list a {
+    text-decoration: none;
+    color: black;
 }

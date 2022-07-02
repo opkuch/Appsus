@@ -5,7 +5,7 @@
     margin-bottom: 1rem;
 }
 
-.notes-filter input{
+/* .notes-filter input{
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
     border:1px solid rgb(231 215 215);
@@ -18,4 +18,29 @@
     outline: none;
     box-shadow: 0px 0px 3px 0px #0000004d;
     background: white;   
+} */
+
+.notes-filter .input-txt {
+    font-family: inherit;
+    width: 75%;
+    border: 0;
+    border-bottom: 3px solid #363333;
+    outline: 0;
+    color: rgb(250, 242, 242);
+    padding: 7px 0;
+    transition: border-color 0.2s;
+    background-color: rgba(245, 245, 245, 0.167);
+    font-size: 1.3rem;
+}
+
+.notes-filter .input-txt::placeholder {
+    color: black;
+}
+
+.input-txt:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #ff9f9f, #ef3838);
+    border-image-slice: 1;
 }

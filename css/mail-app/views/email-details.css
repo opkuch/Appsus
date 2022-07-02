@@ -24,9 +24,11 @@
     flex-basis: 80%;
     background-color: rgb(252, 252, 252);
     border-bottom: 3px solid rgba(0, 0, 0, 0.226);
+    overflow-y: auto;
 }
 .content-actions {
     display: flex;
+    justify-content: space-evenly;
     padding: 0.3rem;
 }
 .content-actions a{
@@ -34,7 +36,6 @@
     font-size: 1.2rem;
     color: black;
     padding-inline: 0.6rem;
-    margin-inline-start: 1.5rem;
     transition: all 250ms;
 
 }
@@ -141,3 +142,12 @@
 .content-actions .read-icon{
     min-height: 30px;
 } 
+
+.content-actions .send-icon-container {
+    width: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 200ms;
+}
