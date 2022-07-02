@@ -2,4 +2,12 @@
     .email-app-container {
         flex-direction: column-reverse;
     }
+    .sliced-body {
+        display: none;
+    }
+    @media(max-width: 380px) {
+        .prev-subject {
+            display: none;
+        }
+    }
 }

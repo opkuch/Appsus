@@ -10,7 +10,7 @@ export default {
                       <span class="from">{{getSenderName}}</span>
                     </section>
                     <section class="email-prev-body">
-                        <span>{{getSubject}}</span>
+                        <span class="prev-subject">{{getSubject}}</span>
                         <span class="sliced-body">{{sliceEmailBody}}</span>
 
                     </section>
