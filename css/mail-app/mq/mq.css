@@ -8,12 +8,7 @@
     .sliced-body {
         display: none;
     }
-    @media(max-width: 380px) {
-        .prev-subject {
-            display: none
-            ;
-        }
-    }
+
     .email-details-container {
         flex-direction: column-reverse;
     }
@@ -23,5 +18,23 @@
     .subject-container {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .email-app-container textarea {
+        max-width: 300px;
+    }
+
+    .email-compose-container {
+        min-width: 250px;
+    }
+
+    @media(max-width: 380px) {
+        .prev-subject {
+            display: none
+            ;
+        }
+        .email-app-container textarea {
+            max-width: 200px;
+        }
     }
 }
