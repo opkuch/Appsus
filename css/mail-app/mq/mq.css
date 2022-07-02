@@ -31,7 +31,9 @@
     .email-list-container ul {
         max-height: 50vh;
     }
-
+    footer {
+        position: static;
+    }
     @media(max-width: 380px) {
         .prev-subject {
             display: none

@@ -80,7 +80,7 @@
     transition: transform 1.3s, filter .5s;
 }
 
-.grid-icon:hover {
+.grid-icon:hover, .grid-icon:active {
     transform: rotate(90deg);
     filter: invert(11%) sepia(37%) saturate(4778%) hue-rotate(351deg) brightness(91%) contrast(119%);
 }

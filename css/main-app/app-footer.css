@@ -4,6 +4,8 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
 }
 footer header, footer h1 {
     cursor: default;
@@ -12,5 +14,4 @@ footer header, footer h1 {
 footer img {
     max-height: 30px;
     cursor: default;
-
 }

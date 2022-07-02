@@ -20,10 +20,9 @@ export default {
                     <img class="note-icon" src="assets/mail-img/icons/color-fill-outline.svg">
                   </label>
                   <input :id="note.id" type="color" v-model="color" title="Background Color" @input="setBgClr" />
-                  <button @click="setPinned" title="Pin"><img class="note-icon" src="assets/mail-img/icons/pin-outline.svg"></button>
                   <button @click="copy" title="Copy"><img class="note-icon" src="assets/mail-img/icons/copy-outline.svg"></button>
                   <button @click="send" title="Send"><img class="note-icon" src="assets/mail-img/icons/paper-plane-outline.svg"></button>
-
+                  <button class="pin" @click="setPinned" title="Pin"><img class="note-icon" src="assets/mail-img/icons/pin-outline.svg"></button>
             </div>
   `,
   props: ['note'],

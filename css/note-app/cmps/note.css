@@ -36,8 +36,9 @@
     border-radius: 25px;
 
 }
+
 .note-container iframe {
-    margin-block-start: 1rem;
+    max-width: 300px;
 }
 
 .note-container .actions {
@@ -45,8 +46,8 @@
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content: space-around;
     margin-top: 0.5rem;
+    margin-inline-start: 1rem;
     align-items: flex-start;
     color: rgb(53, 54, 54);
 }
@@ -75,12 +76,6 @@
     order: -1;
 }
 
-.note-container iframe{
-    width: 100%;
-    border: none;
-    position: relative;
-    bottom: 40px;
-}
 
 .note-txt-container p {
     margin-inline-start: 1rem;
