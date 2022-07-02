@@ -99,3 +99,8 @@
 .note-lnk:hover::after {
     content: 'Note App';
 }
+
+.logo-router {
+    display: flex;
+    align-items: center;
+}

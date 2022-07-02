@@ -6,10 +6,9 @@
     padding: 6px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 350px));
-    /* grid-auto-rows: min-content; */
-    grid-template-rows: repeat(auto-fit, minmax(150px, 250px));
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(4, minmax(250px, 350px));
+    grid-auto-rows: min-content;
+    grid-auto-flow:dense;
     justify-content: center;
     gap: 30px;
     /* display: grid;
@@ -21,7 +20,9 @@
     /* grid-template-columns: repeat(3, 1fr); */
     /* gap: 0.5rem;   */
 }
-
+.notes-list .note-container:nth-child(3) {
+    grid-column: span 2;
+}
 .notes-list .note-container.get-long {
     grid-row: span 2;
 }

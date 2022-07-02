@@ -2,12 +2,12 @@ export default {
   template: `
             <header class="main-header">
               <section class="header">
-              <router-link :to="''">
+              <router-link class="logo-router" to="/">
                 <div class="logo-img-container">
                       <img src="assets/logo-img/horse1.png"/>
                 </div>
-              </router-link>
                 <h1><span>pp</span>sus</h1>
+              </router-link>
               </section>
               <img src="assets/mail-img/icons/apps.svg" class="grid-icon" @click="toggleApps" />
               <nav class="main-nav" :class="appMenuStyle">
