@@ -4,7 +4,7 @@ import noteEdit from "../views/note-edit.cmp.js"
 export default {
     template: `
         <section class="notes-list">
-                <div v-for="note in notes" :key="note.id" class="note-container" :style="{backgroundColor: note.backgroundColor}" :class="{important: note.isPinned, 'get-long': note.type==='note-img' || 'note-video'}">
+                <div v-for="note in notes" :key="note.id" class="note-container" :style="{backgroundColor: note.backgroundColor}" :class="{important: note.isPinned, 'get-long': note.type==='note-img', 'get-wide': note.type==='note-video'}">
                         <note-preview :note="note"  @set-pinned="setPinned" @remove="remove" @copy="copy" @send="send"/>
                     </router-link>
                 </div>
