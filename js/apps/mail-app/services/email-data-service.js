@@ -158,6 +158,17 @@ const emailData = [
     status: 'inbox',
     isStarred: true,
   },
+  {
+    id: 'e113',
+    subject: 'Warzone Ya Gever',
+    body: 'work environment based marketplace on our customer satisfaction they needs, and practices. The following human resource policies',
+    isRead: false,
+    sentAt: 123133930794,
+    from: 'yakovziyonov@jojo.com',
+    to: 'user@momo.com',
+    status: 'inbox',
+    isStarred: true,
+  },
 ]
 const loggedinUser = { email: 'user@appsus.com', fullname: 'Mahatma Appsus' }
 
