@@ -6,7 +6,7 @@
     padding: 6px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(250px, 350px));
     /* grid-auto-rows: min-content; */
     grid-template-rows: repeat(auto-fit, minmax(150px, 250px));
     grid-auto-flow: dense;
