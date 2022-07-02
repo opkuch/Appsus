@@ -1,0 +1,16 @@
+
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer header, footer h1 {
+    cursor: default;
+}
+
+footer img {
+    max-height: 30px;
+    cursor: default;
+
+}

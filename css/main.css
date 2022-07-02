@@ -1,6 +1,7 @@
 /* MAIN-APP */
 @import './main-app/app-header.css';
 @import './main-app/app-home-page.css';
+@import './main-app/app-footer.css';
 
 /* base */
 @import './basic/base.css';
@@ -43,11 +44,6 @@
 @import './mail-app/mq/mq.css';
 
 /* BOOK IMPORTS */
-
-/* book basic */
-/* @import './book-app/basic/base.css';
-@import './book-app/basic/layout.css';
-@import './book-app/basic/helpers.css'; */
 
 /* book cmps */
 @import './book-app/views/about-us.css';

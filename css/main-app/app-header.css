@@ -20,7 +20,9 @@
     letter-spacing: 2px;
 }
 .header h1 {
-    color: rgb(142, 33, 33);
+    /* color: rgb(142, 33, 33); */
+    color: #121111;
+    margin-block-start: 0.8rem;
 }
 .header h1 span {
     color: #121111;
@@ -30,15 +32,16 @@
     margin-inline-start: 2rem;
 }
 .logo-img-container img{
-    max-width: 40px;
+    max-width: 50px;
+    filter: invert(7%) sepia(62%) saturate(5381%) hue-rotate(8deg) brightness(45%) contrast(111%);
 }
 
 .main-nav {
     background: linear-gradient(to right, rgb(163, 0, 0), rgb(212, 43, 43));
     box-shadow: inset 0 10px 30px rgba(31, 30, 30, 0.294);
     position: absolute;
-    right: 100px;
-    top: 0;
+    right: 10px;
+    top: 10px;
     display: flex;
     padding: 1rem;
     border-radius: 20px;
@@ -49,7 +52,7 @@
     z-index: 10;
 }
 .main-nav.menu-active {
-    transform: translateY(20%);
+    transform: translateY(130%);
 }
 
 .main-nav img {
@@ -104,3 +107,4 @@
     display: flex;
     align-items: center;
 }
+

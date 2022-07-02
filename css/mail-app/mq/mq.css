@@ -28,6 +28,10 @@
         min-width: 250px;
     }
 
+    .email-list-container ul {
+        max-height: 50vh;
+    }
+
     @media(max-width: 380px) {
         .prev-subject {
             display: none
