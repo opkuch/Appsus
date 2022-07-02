@@ -1,4 +1,7 @@
 @media(max-width: 800px) {
+    body {
+        overflow-x: hidden;
+    }
     .email-app-container {
         flex-direction: column-reverse;
     }
@@ -7,7 +10,8 @@
     }
     @media(max-width: 380px) {
         .prev-subject {
-            display: none;
+            display: none
+            ;
         }
     }
 }
