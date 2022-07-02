@@ -39,6 +39,8 @@
 @import './mail-app/cmps/email-filter.css';
 @import './mail-app//cmps/email-sort.css';
 
+/* email mq */
+@import './mail-app/mq/mq.css';
 
 /* BOOK IMPORTS */
 
