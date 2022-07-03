@@ -51,6 +51,7 @@
             subject: null,
             body: null
         }
+        this.toggleCompose()
     },
     toggleCompose() {
         this.isShow = !this.isShow
