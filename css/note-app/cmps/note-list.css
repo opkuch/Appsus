@@ -1,8 +1,8 @@
 .notes-list {
-    width: 65vw;
-    margin: auto;
-    max-height: 62vh;
-    overflow-y: auto;
+    width: 70vw;
+    /* max-height: 62vh; */
+    margin-inline-start: 12rem;
+    /* overflow-y: auto; */
     overflow-x: hidden;
     padding: 4rem;
     text-align: center;

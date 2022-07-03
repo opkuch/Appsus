@@ -1,7 +1,8 @@
 .email-app-container {
     display: flex;
     flex-direction: row-reverse;
-}
+    min-height: 80vh;
+    }
 
 .side-bar-container {
     display: flex;

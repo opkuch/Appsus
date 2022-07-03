@@ -3,7 +3,8 @@
   .notes-list {
     display: grid;
     grid-template-columns: minmax(150px, 350px);
-    width: 90vw;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   .notes-list .note-container {
@@ -40,5 +41,8 @@
 }
 .pin {
   margin-right: 1.2rem;
+}
+.footer {
+  position: static;
 }
 }

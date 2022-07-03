@@ -4,8 +4,9 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
+    background-color: whitesmoke;
 }
 footer header, footer h1 {
     cursor: default;
