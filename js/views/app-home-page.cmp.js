@@ -2,7 +2,6 @@
  template:`
         <section class="app-home-container">
           <div class="home-app-txt">
-            <h1>Navigate to our apps</h1>
           </div>
           <nav class="app-home-nav">
               <router-link class="note-lnk" to="/missKeep"><img src="assets/mail-img/icons/today.svg"/></router-link>
